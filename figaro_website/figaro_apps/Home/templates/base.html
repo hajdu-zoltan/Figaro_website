@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.0/js/bootstrap.min.js" integrity="sha384-3qaqj0lc6sV/qpzrc1N5DC6i1VRn/HyX4qdPaiEFbn54VjQBEU341pvjz7Dv3n6P" crossorigin="anonymous"></script>
+
+    <title>Fiagro</title>
+    <link rel="icon" href="../static/image/logo_white.png" type="image/icon type">
+    <link rel="stylesheet" href="../static/style/navbar.css">
+    <link rel="stylesheet" href="../static/style/style.css">
+    <link rel="stylesheet" href="../static/style/price.css">
+</head>
+<body>
+    <div>
+        {% block nav %}
+            {% include 'Navbar.html' %}
+        {% endblock nav %}
+    </div>
+    <div>
+        {% block content %}
+
+        {% endblock content %}
+    </div>
+    <div>
+        {% block footer %}
+            {% include 'Footer.html' %}
+        {% endblock footer %}
+    </div>
+</body>
+</html>

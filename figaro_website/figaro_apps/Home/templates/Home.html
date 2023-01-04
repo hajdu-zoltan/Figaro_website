@@ -1,0 +1,647 @@
+{% extends 'base.html' %}
+{% block content %}
+<link rel="stylesheet" href="../static/style/home.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
+<script src="../static/js/video.js"></script>
+
+
+<div class="container-fluid" style="margin-top: 20px; padding-left: 10%; padding-right: 10%;">
+    <div class="row">
+        <div class="col-lg-6 mb-4 mb-lg-0 main_info_container" style="padding: 15px;">
+          <div class="main_info_box animated-box in">
+            <div class="main_info_tittle">
+              <h3>Figaro Hair Salon és Barber</h3>
+            </div>
+            <div class="main_info_text">
+              <p>Szeged szívében a Somogyi utca 16. szám alatt található Figaro Hair Salonban várunk sok szeretettel.
+                Gyönyörű hajra esetleg vagány szakállra vágysz? Nézz be hozzánk és mi valóra váltjuk elképzeléseidet.
+              </p>
+              <div class="row"> 
+                <div class="opening col-lg-6 mb-4">
+                  <h3>Nyitvatartás:</h3>
+                  <div>
+                    <p>Hétfő-Péntek: 8-20</p>
+                    <p> Szombaton: 8-12</p>
+                    <p> Vasárnap: Zárva</p>
+                  </div>
+                </div>
+                <div class="inf_box col-lg-6 mb-4 ">
+                  <h3>Névjegyek:</h3>
+                  <div class="info_box">
+                      <div class="icon">
+                          <img 
+                              src="../static/image/icons/phone.png"
+                              class="w-5 shadow-1-strong rounded mb-4"
+                              alt="Boat on Calm Water"
+                          />
+                      </div>
+                      <p class="info_text">
+                         06 30 516 6371
+                      </p>
+                  </div>
+                  <div class="info_box">
+                    <div class="icon">
+                        <img 
+                            src="../static/image/icons/phone.png"
+                            class="w-5 shadow-1-strong rounded mb-4"
+                            alt="Boat on Calm Water"
+                        />
+                    </div>
+                    <p class="info_text">
+                       06 20 233 6300
+                    </p>
+                  </div>
+                  <div class="info_box">
+                      <div class="icon">
+                          <img
+                              src="../static/image/icons/localtion.png"
+                              class="w-5 shadow-1-strong rounded mb-4"
+                              alt="Boat on Calm Water"
+                          />
+                      </div>
+                      <p class="info_text">
+                          Szeged Somogyi utca 16.
+                      </p>
+                  </div>
+                  <!-- <div class="info_box">
+                    <div class="icon">
+                        <img
+                            src="../static/image/icons/mail.png"
+                            class="w-5 shadow-1-strong rounded mb-4"
+                            alt="Boat on Calm Water"
+                        />
+                        <p class="info_text">
+                          figarohairsalonszeged@gmail.com
+                      </p>
+                    </div> -->
+                  
+                </div>
+              </div>
+            </div>
+            
+          </div>
+        </div>
+        <div class="col-lg-6 mb-4 mb-lg-0" style="padding: 15px;">
+          {% block video %}
+              {% include 'Video.html' %}
+          {% endblock video %}
+        </div>
+    </div>
+</div>
+
+<div class="container-fluid" style="margin-top: 20px; padding-left: 10%; padding-right: 10%;">
+    <h2>Fodrászaink</h2>
+      <div class="row justify-content-around">
+        {% for hairdresser in hairdressers %}
+          <div class="col-lg-6 col-md-12 mb-4 mb-lg-0 hair_stylist" style="text-align: center;">
+              <div class="row">
+                <div class="col-lg-6 col-md-12 mb-4 mb-lg-0" style="text-align: center;">
+                    <img
+                    src="../static/image/fodraszok/kerekes_helga.jpg"
+                    class="w-100 shadow-1-strong rounded mb-2"
+                    alt="Kerekes Helga"
+                    />
+                </div>
+                <div class="col-lg-6 col-md-12 mb-4 mb-lg-0" style="text-align: center;">
+                  <h2>{{hairdresser.name}}</h2>
+                  <h3>{{hairdresser.occupation}}<br>
+                    {{hairdresser.phone}}</h3>
+                    <p style="text-align: left ;">{{hairdresser.description}}</p>
+                  </ul><a href="{% url 'Gallery' %}" class="booking_hair">Galéria</a><br>
+                  </ul><a href="{% url 'Price' %}" class="booking_hair">Árlista</a>
+                </div>
+              </div>
+          </div>
+        {% endfor %}
+    </div>
+  </div>
+
+<div class="container-fluid" style="margin-top: 20px; padding-left: 10%; padding-right: 10%;">
+    <h2>Aktuális áraink</h2>
+      <div class="row justify-content-around">
+      <!-- Swiper -->
+      <div class="swiper">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide col-lg-4 col-md-12 mb-4 mb-lg-0">
+            <div class="pricing-table-3 premium" style="width: 90%;" >
+              <div class="pricing-table-header">
+                  <h4><strong>Hajvágás</strong></h4>
+                  <p>férfi</p>
+              </div>
+              <div class="price"><strong>3500 Ft</strong></div>
+                <div class="pricing-body">
+                  <ul class="pricing-table-ul">
+                      <li><i class="fa fa-send"></i>kontúrgéppel</li>
+                      <li><i class="fa fa-cloud"></i>Pengével</li>
+                      <li><i class="fa fa-database"></i>Ápolás</li>
+                  </ul><a href="#" class="view-more">Időpontfoglalás</a>
+                </div>
+            </div>
+          </div>
+          
+          <div class="swiper-slide col-lg-4 col-md-12 mb-4 mb-lg-0">
+            <div class="pricing-table-3 basic" style="width: 90%;">
+              <div class="pricing-table-header">
+                  <h4><strong>Hajvágás és szakál igazítás</strong></h4>
+                  <p></p>
+              </div>
+              <div class="price"><strong>5000 Ft</strong></div>
+              <div class="pricing-body">
+                  <ul class="pricing-table-ul">
+                      <li></i> Mosás</li>
+                      <li></i> Hajvágás</li>
+                      <li></i> Szárítás</li>
+                  </ul><a href="#" class="view-more">Időpontfoglalás</a></div>
+            </div>
+          </div>
+          <div class="swiper-slide col-lg-4 col-md-12 mb-4 mb-lg-0 image_box">
+            <div class="pricing-table-3 basic" style="width: 90%;">
+              <div class="pricing-table-header">
+                  <h4><strong>Szakál igazítás</strong></h4>
+                  <p></p>
+              </div>
+              <div class="price"><strong>2500 Ft</strong></div>
+              <div class="pricing-body">
+                  <ul class="pricing-table-ul">
+                      <li><i class="fa fa-send"></i>kontúrgéppel</li>
+                      <li><i class="fa fa-cloud"></i>Pengével</li>
+                      <li><i class="fa fa-database"></i>Ápolás</li>
+                  </ul><a href="#" class="view-more">Időpontfoglalás</a></div>
+            </div>
+          </div>
+          <div class="swiper-slide col-lg-4 col-md-12 mb-4 mb-lg-0 image_box">
+            <div class="pricing-table-3 basic" style="width: 90%;">
+              <div class="pricing-table-header">
+                  <h4><strong>Szakál igazítás és festés</strong></h4>
+                  <p></p>
+              </div>
+              <div class="price"><strong>3500 Ft</strong></div>
+              <div class="pricing-body">
+                  <ul class="pricing-table-ul">
+                      <li><i class="fa fa-send"></i>kontúrgéppel</li>
+                      <li><i class="fa fa-cloud"></i>Pengével</li>
+                      <li><i class="fa fa-database"></i>Ápolás</li>
+                  </ul><a href="#" class="view-more">Időpontfoglalás</a></div>
+            </div>
+          </div>
+          <div class="swiper-slide col-lg-4 col-md-12 mb-4 mb-lg-0 image_box">
+            <div class="pricing-table-3 basic" style="width: 90%;">
+              <div class="pricing-table-header">
+                  <h4><strong>Fejborotválás pengével</strong></h4>
+                  <p></p>
+              </div>
+              <div class="price"><strong>4000 Ft</strong></div>
+              <div class="pricing-body">
+                  <ul class="pricing-table-ul">
+                      <li><i class="fa fa-send"></i>kontúrgéppel</li>
+                      <li><i class="fa fa-cloud"></i>Pengével</li>
+                      <li><i class="fa fa-database"></i>Ápolás</li>
+                  </ul><a href="#" class="view-more">Időpontfoglalás</a></div>
+            </div>
+          </div>
+          <div class="swiper-slide col-lg-4 col-md-12 mb-4 mb-lg-0 image_box">
+            <div class="pricing-table-3 basic" style="width: 90%;">
+              <div class="pricing-table-header">
+                  <h4><strong>Gépi fejborotválás és szakáll igazítás
+                  </strong></h4>
+                  <p></p>
+              </div>
+              <div class="price"><strong>4000 Ft</strong></div>
+              <div class="pricing-body">
+                  <ul class="pricing-table-ul">
+                      <li><i class="fa fa-send"></i>kontúrgéppel</li>
+                      <li><i class="fa fa-cloud"></i>Pengével</li>
+                      <li><i class="fa fa-database"></i>Ápolás</li>
+                  </ul><a href="#" class="view-more">Időpontfoglalás</a></div>
+            </div>
+          </div>
+          <div class="swiper-slide col-lg-4 col-md-12 mb-4 mb-lg-0 image_box">
+            <div class="pricing-table-3 basic" style="width: 90%;">
+              <div class="pricing-table-header">
+                  <h4><strong>Hosszú hajvágás
+                  </strong></h4>
+                  <p></p>
+              </div>
+              <div class="price"><strong>4500 Ft</strong></div>
+              <div class="pricing-body">
+                  <ul class="pricing-table-ul">
+                      <li><i class="fa fa-send"></i>kontúrgéppel</li>
+                      <li><i class="fa fa-cloud"></i>Pengével</li>
+                      <li><i class="fa fa-database"></i>Ápolás</li>
+                  </ul><a href="#" class="view-more">Időpontfoglalás</a></div>
+            </div>
+          </div>
+          <div class="swiper-slide col-lg-4 col-md-12 mb-4 mb-lg-0 image_box">
+            <div class="pricing-table-3 basic" style="width: 90%;">
+              <div class="pricing-table-header">
+                  <h4><strong>Apa és fia hajvágás
+                  </strong></h4>
+                  <p></p>
+              </div>
+              <div class="price"><strong>5500 Ft</strong></div>
+              <div class="pricing-body">
+                  <ul class="pricing-table-ul">
+                      <li><i class="fa fa-send"></i>kontúrgéppel</li>
+                      <li><i class="fa fa-cloud"></i>Pengével</li>
+                      <li><i class="fa fa-database"></i>Ápolás</li>
+                  </ul><a href="#" class="view-more">Időpontfoglalás</a></div>
+            </div>
+          </div>
+          <div class="swiper-slide col-lg-4 col-md-12 mb-4 mb-lg-0 image_box">
+            <div class="pricing-table-3 basic" style="width: 90%;">
+              <div class="pricing-table-header">
+                  <h4><strong>Gyermek hajvágás
+                  </strong></h4>
+                  <p></p>
+              </div>
+              <div class="price"><strong>2500 Ft</strong></div>
+              <div class="pricing-body">
+                  <ul class="pricing-table-ul">
+                      <li><i class="fa fa-send"></i>kontúrgéppel</li>
+                      <li><i class="fa fa-cloud"></i>Pengével</li>
+                      <li><i class="fa fa-database"></i>Ápolás</li>
+                  </ul><a href="#" class="view-more">Időpontfoglalás</a></div>
+            </div>
+          </div>
+          <div class="swiper-slide col-lg-4 col-md-12 mb-4 mb-lg-0">
+            <div class="pricing-table-3 basic" style="width: 90%;">
+              <div class="pricing-table-header">
+                  <h4><strong>Hosszú hajvágás</strong></h4>
+                  <p><br></p>
+              </div>
+              <div class="price"><strong>6500 Ft</strong></div>
+              <div class="pricing-body">
+                  <ul class="pricing-table-ul">
+                      <li></i> Mosás</li>
+                      <li></i> Hajvágás</li>
+                      <li></i> Szárítás</li>
+                  </ul><a href="#" class="view-more">Időpontfoglalás</a>
+                </div>
+            </div>
+          </div>
+          <div class="swiper-slide col-lg-4 col-md-12 mb-4 mb-lg-0">
+            <div class="pricing-table-3 basic" style="width: 90%;">
+              <div class="pricing-table-header">
+                  <h4><strong>Rövid/félhosszú hajvágás</strong></h4>
+                  <p></p>
+              </div>
+              <div class="price" style="background-color:#fc4410">
+                <strong>5500 Ft</strong></div>
+              <div class="pricing-body">
+                  <ul class="pricing-table-ul">
+                    <li></i> Mosás</li>
+                    <li></i> Hajvágás</li>
+                    <li></i> Szárítás</li>
+                  </ul><a href="#" class="view-more">Időpontfoglalás</a></div>
+          </div>
+          </div>
+          
+          <div class="swiper-slide col-lg-4 col-md-12 mb-4 mb-lg-0 image_box">
+            <div class="pricing-table-3 basic" style="width: 90%;">
+              <div class="pricing-table-header">
+                  <h4><strong>Fiú gépelés</strong></h4>
+                  <p></p>
+              </div>
+              <div class="price" style="background-color:#fc4410">
+                <strong>2000 Ft</strong></div>
+              <div class="pricing-body">
+                  <ul class="pricing-table-ul">
+                    <li></i> Mosás</li>
+                    <li></i> Hajvágás</li>
+                    <li></i> Szárítás</li>
+                  </ul><a href="#" class="view-more">Időpontfoglalás</a>
+              </div>
+          </div>
+          </div>
+          <div class="swiper-slide col-lg-4 col-md-12 mb-4 mb-lg-0 image_box">
+            <div class="pricing-table-3 basic" style="width: 90%;">
+              <div class="pricing-table-header">
+                  <h4><strong>Fiú hajvágás</strong></h4>
+                  <p></p>
+              </div>
+              <div class="price" style="background-color:#fc4410">
+                <strong>2500 Ft</strong></div>
+              <div class="pricing-body">
+                  <ul class="pricing-table-ul">
+                    <li></i> Mosás</li>
+                    <li></i> Hajvágás</li>
+                    <li></i> Szárítás</li>
+                  </ul><a href="#" class="view-more">Időpontfoglalás</a></div>
+            </div>
+          </div>
+          <div class="swiper-slide col-lg-4 col-md-12 mb-4 mb-lg-0 image_box">
+            <div class="pricing-table-3 basic" style="width: 90%;">
+              <div class="pricing-table-header">
+                  <h4><strong>Rövid haj festés</strong></h4>
+                  <p></p>
+              </div>
+              <div class="price" style="background-color:#fc4410">
+                <strong>8600 Ft</strong> </div>
+              <div class="pricing-body">
+                  <ul class="pricing-table-ul">
+                  <li></i> Mosás</li>
+                  <li></i> Hajvágás</li>
+                  <li></i> Szárítás</li>
+                  </ul><a href="#" class="booking">Időpontfoglalás</a>
+              </div>
+            </div>
+          </div>
+          <div class="swiper-slide col-lg-4 col-md-12 mb-4 mb-lg-0 image_box">
+            <div class="pricing-table-3 basic" style="width: 90%;">
+              <div class="pricing-table-header">
+                  <h4><strong>Félhosszú haj festés</strong></h4>
+                  <p></p>
+              </div>
+              <div class="price" style="background-color:#fc4410">
+                <strong>9800 Ft</strong> </div>
+              <div class="pricing-body">
+                  <ul class="pricing-table-ul">
+                  <li></i> Mosás</li>
+                  <li></i> Hajvágás</li>
+                  <li></i> Szárítás</li>
+                  </ul><a href="#" class="booking">Időpontfoglalás</a>
+              </div>
+            </div>
+          </div>
+          <div class="swiper-slide col-lg-4 col-md-12 mb-4 mb-lg-0 image_box">
+            <div class="pricing-table-3 basic" style="width: 90%;">
+              <div class="pricing-table-header">
+                  <h4><strong>Hosszú haj festés</strong></h4>
+                  <p></p>
+              </div>
+              <div class="price" style="background-color:#fc4410">
+                <strong>11600 Ft</strong> </div>
+              <div class="pricing-body">
+                  <ul class="pricing-table-ul">
+                  <li></i> Mosás</li>
+                  <li></i> Hajvágás</li>
+                  <li></i> Szárítás</li>
+                  </ul><a href="#" class="booking">Időpontfoglalás</a>
+              </div>
+            </div>
+          </div>
+          <div class="swiper-slide col-lg-4 col-md-12 mb-4 mb-lg-0 image_box">
+            <div class="pricing-table-3 basic" style="width: 90%;">
+              <div class="pricing-table-header">
+                  <h4><strong>Menyaszonyi próbakonty</strong></h4>
+                  <p></p>
+              </div>
+              <div class="price" style="background-color:#fc4410">
+                <strong>5000 Ft</strong> </div>
+              <div class="pricing-body">
+                  <ul class="pricing-table-ul">
+                  <li></i> Mosás</li>
+                  <li></i> Hajvágás</li>
+                  <li></i> Szárítás</li>
+                  </ul><a href="#" class="booking">Időpontfoglalás</a>
+              </div>
+            </div>
+          </div>
+          <div class="swiper-slide col-lg-4 col-md-12 mb-4 mb-lg-0 image_box">
+            <div class="pricing-table-3 basic" style="width: 90%;">
+              <div class="pricing-table-header">
+                  <h4><strong>Menyaszonyi konty</strong></h4>
+                  <p></p>
+              </div>
+              <div class="price" style="background-color:#fc4410">
+                <strong>6500 Ft</strong> </div>
+              <div class="pricing-body">
+                  <ul class="pricing-table-ul">
+                  <li></i> Mosás</li>
+                  <li></i> Hajvágás</li>
+                  <li></i> Szárítás</li>
+                  </ul><a href="#" class="booking">Időpontfoglalás</a>
+              </div>
+            </div>
+          </div>
+          <div class="swiper-slide col-lg-4 col-md-12 mb-4 mb-lg-0 image_box">
+            <div class="pricing-table-3 basic" style="width: 90%;">
+              <div class="pricing-table-header">
+                  <h4><strong>Tűzött fizura</strong></h4>
+                  <p></p>
+              </div>
+              <div class="price" style="background-color:#fc4410">
+                <strong>11600 Ft</strong> </div>
+              <div class="pricing-body">
+                  <ul class="pricing-table-ul">
+                  <li></i> Mosás</li>
+                  <li></i> Hajvágás</li>
+                  <li></i> Szárítás</li>
+                  </ul><a href="#" class="booking">Időpontfoglalás</a>
+              </div>
+            </div>
+          </div>
+          <div class="swiper-slide col-lg-4 col-md-12 mb-4 mb-lg-0 image_box">
+            <div class="pricing-table-3 basic" style="width: 90%;">
+              <div class="pricing-table-header">
+                  <h4><strong>Dauer rövid haj</strong></h4>
+                  <p></p>
+              </div>
+              <div class="price" style="background-color:#fc4410">
+                <strong>5000 Ft</strong> </div>
+              <div class="pricing-body">
+                  <ul class="pricing-table-ul">
+                  <li></i> Mosás</li>
+                  <li></i> Hajvágás</li>
+                  <li></i> Szárítás</li>
+                  </ul><a href="#" class="booking">Időpontfoglalás</a>
+              </div>
+            </div>
+          </div>
+          <div class="swiper-slide col-lg-4 col-md-12 mb-4 mb-lg-0 image_box">
+            <div class="pricing-table-3 basic" style="width: 90%;">
+              <div class="pricing-table-header">
+                  <h4><strong>Dauer félhosszú haj</strong></h4>
+                  <p></p>
+              </div>
+              <div class="price" style="background-color:#fc4410">
+                <strong>6500 Ft</strong> </div>
+              <div class="pricing-body">
+                  <ul class="pricing-table-ul">
+                  <li></i> Mosás</li>
+                  <li></i> Hajvágás</li>
+                  <li></i> Szárítás</li>
+                  </ul><a href="#" class="booking">Időpontfoglalás</a>
+              </div>
+            </div>
+          </div>
+          <div class="swiper-slide col-lg-4 col-md-12 mb-4 mb-lg-0 image_box">
+            <div class="pricing-table-3 basic" style="width: 90%;">
+              <div class="pricing-table-header">
+                  <h4><strong>Dauer hosszú haj</strong></h4>
+                  <p></p>
+              </div>
+              <div class="price" style="background-color:#fc4410">
+                <strong>8000 Ft</strong> </div>
+              <div class="pricing-body">
+                  <ul class="pricing-table-ul">
+                  <li></i> Mosás</li>
+                  <li></i> Hajvágás</li>
+                  <li></i> Szárítás</li>
+                  </ul><a href="#" class="booking">Időpontfoglalás</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+      </div>
+    </div>
+</div>  
+  
+    
+      </div>
+  </div>
+
+
+<div class="container-fluid" style="margin-top: 20px; padding-left: 10%; padding-right: 10%;">
+<h2>Munkáink</h2>
+    <div class="row justify-content-around">
+    <!-- Swiper -->
+    <div class="swiper">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide col-lg-3 col-md-12 mb-4 image_box">
+          <img
+              src="../static/image/273122601_4936073666472395_6213601130249230767_n.jpg"
+              class="w-100 shadow-1-strong rounded mb-4"
+              alt="Boat on Calm Water"
+              />
+        </div>
+        <div class="swiper-slide col-lg-3 col-md-12 mb-4 mb-lg-0 image_box">
+          <img
+              src="../static/image/273122601_4936073666472395_6213601130249230767_n.jpg"
+              class="w-100 shadow-1-strong rounded mb-4"
+              alt="Boat on Calm Water"
+              />
+        </div>
+        <div class="swiper-slide col-lg-3 col-md-12 mb-4 mb-lg-0 image_box">
+          <img
+              src="../static/image/273122601_4936073666472395_6213601130249230767_n.jpg"
+              class="w-100 shadow-1-strong rounded mb-4"
+              alt="Boat on Calm Water"
+              />
+        </div>
+        <div class="swiper-slide col-lg-3 col-md-12 mb-4 mb-lg-0 image_box">
+          <img
+              src="../static/image/273122601_4936073666472395_6213601130249230767_n.jpg"
+              class="w-100 shadow-1-strong rounded mb-4"
+              alt="Boat on Calm Water"
+              />
+        </div>
+        <div class="swiper-slide col-lg-3 col-md-12 mb-4 mb-lg-0 image_box">
+          <img
+              src="../static/image/273122601_4936073666472395_6213601130249230767_n.jpg"
+              class="w-100 shadow-1-strong rounded mb-4"
+              alt="Boat on Calm Water"
+              />
+        </div>
+        <div class="swiper-slide col-lg-3 col-md-12 mb-4 mb-lg-0 image_box">
+          <img
+              src="../static/image/273122601_4936073666472395_6213601130249230767_n.jpg"
+              class="w-100 shadow-1-strong rounded mb-4"
+              alt="Boat on Calm Water"
+              />
+        </div>
+        <div class="swiper-slide col-lg-3 col-md-12 mb-4 mb-lg-0 image_box">
+          <img
+              src="../static/image/273122601_4936073666472395_6213601130249230767_n.jpg"
+              class="w-100 shadow-1-strong rounded mb-4"
+              alt="Boat on Calm Water"
+              />
+        </div>
+        <div class="swiper-slide col-lg-3 col-md-12 mb-4 mb-lg-0 image_box">
+          <img
+              src="../static/image/273122601_4936073666472395_6213601130249230767_n.jpg"
+              class="w-100 shadow-1-strong rounded mb-4"
+              alt="Boat on Calm Water"
+              />
+        </div>
+        <div class="swiper-slide col-lg-3 col-md-12 mb-4 mb-lg-0 image_box">
+          <img
+              src="../static/image/273122601_4936073666472395_6213601130249230767_n.jpg"
+              class="w-100 shadow-1-strong rounded mb-4"
+              alt="Boat on Calm Water"
+              />
+        </div>
+        <div class="swiper-slide col-lg-3 col-md-12 mb-4 mb-lg-0 image_box">
+          <img
+              src="../static/image/273122601_4936073666472395_6213601130249230767_n.jpg"
+              class="w-100 shadow-1-strong rounded mb-4"
+              alt="Boat on Calm Water"
+              />
+        </div>
+      </div>
+      <div class="swiper-button-next"></div>
+      <div class="swiper-button-prev"></div>
+    </div>  
+<!-- Swiper JS -->
+<script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+  
+<!-- Initialize Swiper -->
+<script>
+  var _slidesPerView = window.innerWidth <= 760 ? '1' : '2';
+  console.log(window.innerWidth)
+  if(_slidesPerView == '2'){
+    var swiper = new Swiper('.swiper', {
+    slidesPerView: 3,
+    direction: getDirection(),
+    loop:true,
+    autoplay: {
+      delay: 6000,
+      disableOnInteraction: false,
+    },
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+    },
+    on: {
+      resize: function () {
+        swiper.changeDirection(getDirection());
+      },
+    },
+  });
+  }
+  else{
+    var swiper = new Swiper('.swiper', {
+    slidesPerView: 1,
+    direction: getDirection(),
+    autoplay: {
+      delay: 3000,
+      disableOnInteraction: false,
+    },
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+    },
+    on: {
+      resize: function () {
+        swiper.changeDirection(getDirection());
+      },
+    },
+  });
+  }
+  
+  
+
+  function getDirection() {
+    var windowWidth = window.innerWidth;
+    var direction = window.innerWidth <= 760 ? 'horizontal' : 'horizontal';
+
+    return direction;
+  }
+</script>
+ 
+    </div>
+    </div>
+    </div>
+</div>
+<div class="container" style="margin-top: 20px;">
+    <div class="row">
+      <div class="col-lg-12 mb-12 mb-lg-12" style="padding: 15px;">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d11036.09086526794!2d20.1480177!3d46.2497762!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xe581f8bf4034a44a!2sFigaro%20Hair%20Szalon!5e0!3m2!1shu!2shu!4v1658520437730!5m2!1shu!2shu" width="100%" height="400px" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+    </div>
+  </div>
+{% endblock content %}
+

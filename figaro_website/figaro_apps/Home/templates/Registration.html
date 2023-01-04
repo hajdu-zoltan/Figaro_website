@@ -1,0 +1,78 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    {% if  warning is not None %}
+      <script>
+        alert('{{ warning }}');
+      </script>
+    {% endif %}
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+    <form method="POST">
+        {% csrf_token %}
+        <section class=" gradient-custom"  style="margin-bottom: 50px;">
+            <div class="container py-5">
+              <div class="row d-flex justify-content-center align-items-center h-100">
+                <div class="col-md-01 col-lg-6 col-xl-6">
+                  <div class="card text-white" style="border-radius: 1rem; background: rgb(0 0 0 / 87%);">
+                    <div class="card-body p-4 text-center">
+          
+                      <div class="mb-md-3 mt-md-2 pb-2">
+          
+                        <h2 class="fw-bold mb-2 text-uppercase">Regisztráció</h2>
+                        <p class="text-white-70 mb-5">Kérlek add meg a szükséges adatokat!</p>
+                        <div>
+                          {% if messages %}
+                            {% for message in messages %}
+                              {{message}}
+                            {% endfor %}
+                          {% endif %}
+                        </div>
+                        
+                       
+                        <div class="form-outline form-white mb-4">
+                          <input type="email" id="typeEmailX" name="email" class="form-control form-control-lg" value="{{email}}" />
+                          <label class="form-label" for="typeEmailX">Email</label>
+                        </div>
+
+                        <div class="form-outline form-white mb-4">
+                          <input type="text" id="text" name="name" class="form-control form-control-lg" value="{{name}}" />
+                          <label class="form-label" for="typeName">Név</label>
+                        </div>
+          
+                        <div class="form-outline form-white mb-4">
+                          <input type="password" id="typePasswordX" name="password" class="form-control form-control-lg" value="{{password}}" />
+                          <label class="form-label" for="typePasswordX">Jelszó</label>
+                        </div>
+        
+                        <div class="form-outline form-white mb-4">
+                            <input type="password" id="typePasswordX" name="forget_password" class="form-control form-control-lg" value="{{forget_password}}" />
+                            <label class="form-label" for="typePasswordX">Jelszó ellenőrzés</label>
+                        </div>
+        
+                        <div class="form-outline form-white mb-4">
+                            <input type="phone" maxlength="12" id="typePasswordX" name="phone" class="form-control form-control-lg" value="{{phone}}" />
+                            <label class="form-label" for="typePasswordX">Telefonszám</label>
+                        </div>
+                        <div class="form-outline form-white mb-4">
+                          <div class="g-recaptcha" data-sitekey="6LdLXOMiAAAAAIrk7xvnfv0xo0oyU7kmcIv4zY2Z"></div>
+                        </div>
+                        <br/>
+                    
+                        <input class="btn btn-outline-light btn-lg px-5 btn_login" name='register' type="submit" value="Regisztráció"></button>
+          
+                      </div>
+          
+                      <div>
+                        <p class="mb-0">Már van fiókod? <a href="{% url 'Login' %}" class="text-white-50 fw-bold">Bejelentkezés</a>
+                        </p>
+                      </div>
+          
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+    </form>
+{% endblock content %}  
+

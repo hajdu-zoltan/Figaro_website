@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    {% if  actual_page == "price_list_man"%}
+        {% include 'Price_list_man.html' %}
+    {% elif actual_page == "price_list_women" %}
+        <div>
+            {% block women %}
+                {% include 'Price_list_women.html' %}
+            {% endblock women %}
+        </div>
+    {% else %}
+        <div>
+            {% include 'Price_list_man.html' %}
+        </div>
+        <div>
+            {% include 'Price_list_women.html' %}
+        </div>
+    {% endif %}
+{% endblock content %}  

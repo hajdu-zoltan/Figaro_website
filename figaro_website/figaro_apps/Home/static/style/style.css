@@ -1,0 +1,59 @@
+@charset "utf-8";
+/* CSS Document */
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:300italic,500,400,300,800);
+@import url(http://fonts.googleapis.com/css?family=Ubuntu:300,400,700);
+@import url(http://fonts.googleapis.com/css?family=Roboto:100,300,400);
+
+#myCarousel {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .carousel-control-next, .carousel-control-prev {
+      width: 9% !important;
+      height: 50%;
+      margin-top: 11%;
+  }
+  
+  .carousel-inner {
+    background: #111;
+  }
+  
+  .carousel-indicators {
+    bottom: -13px !important;
+  }
+  
+  .carousel-item {
+    padding-bottom: 25px;
+  }
+  
+  video {
+    width: 100%;
+  }
+body{
+    background-color: #f0f3f6;
+    
+}
+.image_box{
+  transition: transform .5s ease;
+}
+
+.image_box:hover{
+	transform:scale(1.1,1.1);
+	cursor:pointer;
+  transition:all 0.5s ease-in-out ;
+
+}
+.btn_login{
+  background-color: #e35e0a;
+  font-size: 2.4vh !important;
+}
+.women_price{
+  background-color:#fc4410 !important;
+}
+.close{
+  font-size: 1.5rem !important;
+}
+.g-recaptcha{
+  width: 100%;
+}

@@ -1,0 +1,23 @@
+{% load static %}
+
+<div class="row">
+    {% for price_data in price_datas %}
+        {% if price_data.categori == 0 %}
+            <div class="col-md-4 col-sm-6 col-lg-3">
+                <div class="pricing-table-3 basic">
+                    <div class="pricing-table-header">      
+                        <h4><strong>{{price_data.tittle}}</strong></h4>
+                    </div>
+                    <div class="price"><strong>{{price_data.price}} Ft</strong></div>
+                    <div class="pricing-body">
+                        <ul class="pricing-table-ul">
+                            <p>{{price_data.barber_name}}</p>
+                            <li></i> Mosás</li>
+                            <li></i> Hajvágás</li>
+                            <li></i> Szárítás</li>
+                        </ul><a href="#" class="view-more">Időpontfoglalás</a></div>
+                </div>
+            </div>
+        {% endif %}
+    {% endfor %}
+    
