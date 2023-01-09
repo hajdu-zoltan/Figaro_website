@@ -41,7 +41,7 @@ document.addEventListener('DOMContentLoaded', function(){
      };
     
     Calendar.prototype.drawDays = function() {
-        var startDay = new Date(year, month, 1).getDay(),
+        var startDay = new Date(year, month, 0).getDay(),
   //      下面表示这个月总共有几天
             nDays = new Date(year, month + 1, 0).getDate(),
     
@@ -96,11 +96,15 @@ document.addEventListener('DOMContentLoaded', function(){
         console.log('select '+new Date(year, month, o.innerHTML))
         var actual_date= new Date(year, month, o.innerHTML)
         actual_date=actual_date.toLocaleString()
-        console.log(dates+' VS '+actual_date);
+        // console.log(dates+' VS '+actual_date);
+        // document.getElementById('date').value=actual_date;
         var appointmets="";
         function addHours(date, hours) {
+            date.setHours(00);
+            date.setMinutes(00);
+            date.setSeconds(00);
             date.setHours(date.getHours() + hours);
-          
+            document.getElementById('date').value=date.toLocaleString();
             return date;
           }
         function addMinutes(date, minutes) {
@@ -109,62 +113,76 @@ document.addEventListener('DOMContentLoaded', function(){
         }
         for(let i = 9; i < 20; i++){
             var date_= new Date(year, month, o.innerHTML)
-            const newDate = addHours(date_, i);
-            var newDate1 = newDate.toLocaleString("ru-RU");
-            newDate.setTime(newDate.getTime() + (30 * 60 * 1000));
-            var newDate2 = newDate.toLocaleString("ru-RU");
-            var time= ""+i+":00"
-            var time2= ""+i+":30"
-            var van1 = 0;
-            var van2 = 0;
-            for(let y = 0; y < dates.length; y++){
-                console.log(dates[y]+' VS '+newDate1)
-                if (dates[y] == newDate1 ){
-                    console.log('ugyan az')
-                    van1 = 1
+            if(date_ != 'Invalid Date'){
+            
+                // console.log(date_);
+                const newDate = addHours(date_, i);
+                var newDate1 = newDate.toLocaleString("ru-RU");
+                newDate.setTime(newDate.getTime() + (30 * 60 * 1000));
+                var newDate2 = newDate.toLocaleString("ru-RU");
+                var time= ""+i+":00"
+                var time2= ""+i+":30"
+                var van1 = 0;
+                var van2 = 0;
+                
+                for(let y = 0; y < dates.length; y++){
+                    //console.log(dates[y]+' VS '+newDate1)
+                    if (dates[y] == newDate1 ){
+                        // console.log('ugyan az')
+                        // console.log(dates[y]+' VS '+newDate1)
+                        van1 = 1
+                    }
+                    if (dates[y] == newDate2 || dates[y] <= today){
+                        van2 = 1
+                    }
+                    if(date_ <= today){
+                        van1 = 1
+                        van2 = 1
+                    }
                 }
-                if (dates[y] == newDate2){
-                    van2 = 1
+                if(van1 ==  0){
+                    appointmets+='\
+                    <div class="radio__button chip" id ="'+time+'" onclick="selected_time(this.id)">\
+                        <input class="radio__input" name="time" type="radio" value="'+time+'" id="&quot;'+time+'&quot;">\
+                        <label class="radio__label" for="&quot; '+time+'&quot;">\
+                            <div class="chip__label" id ="'+time+'_">'+time+'</div>\
+                        </label>\
+                    </div>'
                 }
-            }
-            if(van1 ==  0){
-                appointmets+='\
-                <div class="radio__button chip" id ="div_'+time+'" onclick="selected_time(this.id)">\
-                    <input class="radio__input" name="time" type="radio" value="'+time+'" id="&quot;'+time+'&quot;">\
-                    <label class="radio__label" for="&quot; '+time+'&quot;">\
-                        <div class="chip__label" id ="div_'+time+'_">'+time+'</div>\
-                    </label>\
-                </div>'
+                else{
+                    appointmets+='\
+                    <div class="radio__button chip reserved_container" id ="'+time+'" onclick="selected_time(this.id)">\
+                        <input class="radio__input" name="time" type="radio" value="'+time+'" id="&quot;'+time+'&quot;">\
+                        <label class="radio__label" for="&quot; '+time+'&quot;">\
+                            <div class="chip__label reserved" id ="'+time+'_">'+time+'</div>\
+                        </label>\
+                    </div>'
+                }
+                if(van2 ==  0){
+                    appointmets+='\
+                    <div class="radio__button chip" id ="'+time2+'" onclick="selected_time(this.id)">\
+                        <input class="radio__input" name="time" type="radio" value="'+time2+'" id="&quot;'+time2+'&quot;">\
+                        <label class="radio__label" for="&quot; '+time2+'&quot;">\
+                            <div class="chip__label" id ="'+time2+'_">'+time2+'</div>\
+                        </label>\
+                    </div>'
+                }
+                else{
+                    appointmets+='\
+                    <div class="radio__button chip reserved_container" id ="'+time2+'" onclick="selected_time(this.id)">\
+                        <input class="radio__input" name="time" type="radio" value="'+time2+'" id="&quot;'+time2+'&quot;">\
+                        <label class="radio__label" for="&quot; '+time2+'&quot;">\
+                            <div class="chip__label reserved" id ="'+time2+'_">'+time2+'</div>\
+                        </label>\
+                    </div>'
+                }
             }
             else{
-                appointmets+='\
-                <div class="radio__button chip reserved_container" id ="div_'+time+'" onclick="selected_time(this.id)">\
-                    <input class="radio__input" name="time" type="radio" value="'+time+'" id="&quot;'+time+'&quot;">\
-                    <label class="radio__label" for="&quot; '+time+'&quot;">\
-                        <div class="chip__label reserved" id ="div_'+time+'_">'+time+'</div>\
-                    </label>\
-                </div>'
+                console.log('valasz')
+                appointmets='<h3 class="head-month">Válasz egy napot!</h3>'
             }
-            if(van2 ==  0){
-                appointmets+='\
-                <div class="radio__button chip" id ="div_'+time2+'" onclick="selected_time(this.id)">\
-                    <input class="radio__input" name="time" type="radio" value="'+time2+'" id="&quot;'+time2+'&quot;">\
-                    <label class="radio__label" for="&quot; '+time2+'&quot;">\
-                        <div class="chip__label" id ="div_'+time2+'_">'+time2+'</div>\
-                    </label>\
-                </div>'
-            }
-            else{
-                appointmets+='\
-                <div class="radio__button chip" id ="div_'+time2+'" onclick="selected_time(this.id)">\
-                    <input class="radio__input" name="time" type="radio" value="'+time2+'" id="&quot;'+time2+'&quot;">\
-                    <label class="radio__label" for="&quot; '+time2+'&quot;">\
-                        <div class="reserved" id ="div_'+time2+'_">'+time2+'</div>\
-                    </label>\
-                </div>'
-            }
+
         }
-        
         document.getElementById("demo").innerHTML = appointmets;
 
         o.className = "selected";
@@ -251,52 +269,21 @@ const radioButtons = document.querySelectorAll('input[name="time"]');
 // console.log(radioButtons)
 function selected_time(id){
     for(let i = 9; i < 20; i++){
-        var time= ""+i+":00"
-        var time2= ""+i+":30"
-        document.getElementById('div_'+time+'_').style.backgroundColor = "rgb(50 255 43)";
-        document.getElementById('div_'+time2+'_').style.backgroundColor = "rgb(50 255 43)";
+        var time= ""+i+":00_"
+        var time2= ""+i+":30_"
+        document.getElementById(time).style.backgroundColor = "rgb(50 255 43)";
+        document.getElementById(time2).style.backgroundColor = "rgb(50 255 43)";
     }
     
     let selectedSize;
     selectedSize = id;
     document.getElementById(id+'_').style.backgroundColor = "rgb(227 94 10)";
     // show the output:
-    console.log(selectedSize)
+    console.log(id)
+    document.getElementById('time').value=id;
     last_id=id
 };
 function btn_selected(id){
     document.getElementById(id).style.backgroundColor = "rgb(227 94 10)";
-    console.log('selected')
-}
-function get_value1(value){
-    console.log( $(value).text())
-}
-function get_value(value){
-    var csrftoken = jQuery("[name=csrfmiddlewaretoken]").val();
-
-    function csrfSafeMethod(method) {
-        return (/^(GET|HEAD|OPTIONS|TRACE)$/.test(method));
-    }
-
-    $.ajaxSetup({
-        beforeSend: function (xhr, settings) {
-            if (!csrfSafeMethod(settings.type) && !this.crossDomain) {
-                xhr.setRequestHeader("X-CSRFToken", csrftoken);
-            }
-        }
-    });
-
-    $.ajax({
-        url: "/home",
-        data: {
-            'value': inputDataArray  //I have already defined "inputDataArray" before
-        },
-        success: function (res, status) {
-            alert(res);
-            alert(status);
-        },
-        error: function (res) {
-            alert(res.status);                                                                                                                          
-        }
-    });
+    // console.log('selected')
 }

@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<link rel="stylesheet" href="../static/style/booking.css">
+<script src="../static/js/confirmation.js"></script>
+<div class="container" style="margin-top: 20px; min-height: 80%;">
+  <div id="booking" class="section">
+    <div class="section-center">
+          <div class="row align-self-center">
+              <div class="booking-form">
+                <div class="back_button">
+                    <button type="button" class="btn btn-warning" onclick="location.href='Booking.html'"><</button>
+                </div>
+                  <div class="form-header">
+                      <h2>Megerősítés</h2>
+                      <p style="color:rgb(255, 255, 255) ;">Kérem írja be az SMS-ben kapott kódot.</p>
+                </div>
+                <form method="POST">
+                  {% csrf_token %}
+                  <input class="activation-code-input w-100 md-3 " name="code" placeholder="kód">
+                  <p class="mb-0" style="text-align: right; color:rgb(204, 204, 204) ;">Nem kaptad meg a megerősitő kódot? <a href="#!" class="text-white-50 fw-bold">Kód újraküldése</a>
+                  <div class="form-btn">
+                      <button class="submit-btn">Foglalás megerősítése</button> 
+                  </div>
+                </form>
+              </div> 
+          </div>
+        
+      </div>
+    </div> 
+  </div>
+</div>
+{% endblock content %} 

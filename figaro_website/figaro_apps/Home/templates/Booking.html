@@ -2,6 +2,8 @@
 
 {% block content %}
 <link rel="stylesheet" href="../static/style/booking.css">
+<script src="https://www.google.com/recaptcha/api.js" async defer></script>
+
 <div class="container" style="margin-top: 20px;">
     <div id="booking" class="section">
           <div class="section-center">
@@ -14,44 +16,23 @@
                             <form method="POST">
                                 {% csrf_token %}
                                 <div class="form-group">
-                                        <input class="form-control" type="text" placeholder="Név">
+                                        <input class="form-control" value="{{name}}" name="name" type="text" placeholder="Név">
                                         <span class="form-label">Destination</span>
                                     </div>
                                     <div class="form-group">
-                                        <input class="form-control" type="text" placeholder="Email">
+                                        <input class="form-control" value="{{email}}" name="email" type="text" placeholder="Email">
                                         <span class="form-label">Email</span>
                                     </div>
                                     <div class="form-group">
-                                        <input class="form-control" type="text" placeholder="Telefonszám">
+                                        <input class="form-control" name="phone" type="text" placeholder="Telefonszám">
                                         <span class="form-label">Email</span>
                                     </div>
                                     <div class="form-group"> 
-                                        <select class="form-control" required>
-                                        <option value="" selected hidden>Válassz egy szolgáltatást</option> 
-                                            <option>Hajvágás 3500 Ft</option>
-                                            <option>Hajvágás és szakáll igazítás 5000 Ft</option>
-                                            <option>Szakáll igazítás 2500 Ft</option>
-                                            <option>Szakáll igazítás és festés 3500 Ft</option>
-                                            <option>Fejborotválás pengével 4000 Ft</option>
-                                            <option>Fejborotválás és szakáll igazítás pengével 5000 Ft</option>
-                                            <option>Gépi fejborotválás és szakáll igazításl 4000 Ft</option>
-                                            <option>Hosszú hajvágás 4500 Ft</option>
-                                            <option>Apa és fia hajvágás 5500 Ft</option>
-                                            <option>Gyermek hajvágás 2500 Ft</option>
-                                            <option>Rövid/félhosszú hajvágás 5500 Ft</option>
-                                            <option>Hosszú hajvágás 6500 Ft</option>
-                                            <option>Fiú gépelés 2000 Ft</option>
-                                            <option>Fiú hajvágás 2500 Ft</option>
-                                            <option>Rövid haj festés 8600 Ft</option>
-                                            <option>Félhosszú haj festés 9800 Ft</option>
-                                            <option>Hosszú haj festés 11600</option>
-                                            <option>Menyaszonyi próbakonty 5000 Ft</option>
-                                            <option>Menyaszonyi konty 6500 Ft</option>
-                                            <option>Tűzött fizura 11600 Ft</option>
-                                            <option>Dauer rövid haj 5000 Ft</option>
-                                            <option>Dauer félhosszú haj 6500 Ft</option>
-                                            <option>Dauer hosszú haj 8000 Ft</option>
-        
+                                        <select class="form-control" name="category" required>
+                                        <option value="" selected hidden>Válassz egy szolgáltatást</option>
+                                            {% for price_ in price %}
+                                                <option value={{price_.id}}>{{price_.tittle}} {{price_.price}} Ft</option>
+                                            {% endfor %}
                                         </select>
                                         <span class="select-arrow"></span> 
                                         <span class="form-label">Adults</span> 
@@ -59,9 +40,14 @@
                                     {% block calendar %}
                                         {% include 'Calendar.html' %}
                                     {% endblock calendar %}
-                            
+                                    <input class="form-control" id="date" name="date" type="text" placeholder="date">
+                                    <input class="form-control" id="time" name="time" type="text" placeholder="time">
+                                    <div class="form-outline form-white mb-4">
+                                        <div class="g-recaptcha" data-sitekey="6LdLXOMiAAAAAIrk7xvnfv0xo0oyU7kmcIv4zY2Z"></div>
+                                    </div>
+                                    <br/>
                                 <div class="form-btn">
-                                        <button class="submit-btn" onclick="location.href='Confirmation.html'">Időpont lefoglalása</button> 
+                                        <button class="submit-btn" type="submit">Időpont lefoglalása</button> 
                                 </div>
                             </form>
                         </div> 

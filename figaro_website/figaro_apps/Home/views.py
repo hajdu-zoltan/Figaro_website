@@ -5,9 +5,11 @@ import imp
 from pickle import NONE
 from django.http import HttpResponse
 from django.shortcuts import render, redirect
-from . models import User, Price, Hairdresser, Booked_appointmentss
-from .forms import Myform
+from . models import User, Price, Hairdresser, Booked_appointments1
+from .forms import FormWithCaptcha
 from django.contrib import messages
+from datetime import datetime
+from django.core.mail import EmailMessage
 
 
 def test(request):
@@ -42,16 +44,51 @@ def price_list_man(request):
 
 
 def booking(request):
-    search_value = request.GET.get("check_this", None)
-    booked_appointments = Booked_appointmentss.objects.all()
+    _name = ''
+    _email = ''
+    _phone=''
+    _category=''
+    booked_appointments = Booked_appointments1.objects.all()
+    price = Price.objects.all()
     if request.method == 'GET':
-        return render(request, "Booking.html", {'actual_page': 'booking','booked_appointments':booked_appointments,'number':range(9,20)})
+        return render(request, "Booking.html", {'actual_page': 'booking','price':price,'booked_appointments':booked_appointments,'number':range(9,20)})
     elif request.method == 'POST':
-        return render(request, "Registration.html", {'actual_page': 'registration'})
+        _name = request.POST.get('name')
+        _email = request.POST.get('email')
+        _phone = request.POST.get('phone')
+        _category = request.POST.get('category')
+        _date = request.POST.get('date')
+        _date = datetime.strptime(_date, '%Y. %m. %d. %H:%M:%S')
+        _time = request.POST.get('time')
+        form = FormWithCaptcha(request.POST)
+        errors=0
+        if form.is_valid():
+            if _name == '' or _email == '' or _phone == '' or _category == '' or _date == '' or _time == '':
+                errors+=1
+                messages.success(request, "Tölsd ki az összes mezőt!")
+                return render(request, "Booking.html", {'actual_page': 'booking','price':price,'booked_appointments':booked_appointments,'number':range(9,20),'email':_email, 'name':_name})
 
+            if errors == 0:
+                Booked_appointments_ = Booked_appointments1(date=_date, time=_time, email=_email, phone=_phone, name=_name)
+                Booked_appointments_.save()
+                code = '1234'
+                _date=str(_date).split(' ')
+                message = f'Tisztelt {_name} Időpont foglalása sikeresen megtörtént. Az időpontja a következő:{_date[0]} {_time} Üdvözlettel Figaro.'
+                email = EmailMessage('Időpont fogalalás', message, to=[_email])
+                email.send()
+                return render(request, "Successful_booking.html", {'actual_page': 'booking', 'email':_email, 'name':_name, 'date':_date[0], 'time':_time})
+        else:
+            messages.success(request, "Nem megfelelően töltötte ki az adatokat!")
+            return render(request, "Booking.html", {'actual_page': 'booking','price':price,'booked_appointments':booked_appointments,'number':range(9,20),'email':_email, 'name':_name})
 
-    return redirect('Home', {'actual_page': 'home'})
-    
+        return render(request, "Registration.html", {'actual_page': 'conformation', 'code': code})
+
+def confirmation(request):
+    if request.method == 'GET':
+        code = '1234'
+        return render(request, "Confirmation.html", {'actual_page': 'conformation', 'code': code})
+    elif request.method == 'POST':
+        _code = request.POST.get('code')
 
 def register(request):
     form = Myform(request.POST)

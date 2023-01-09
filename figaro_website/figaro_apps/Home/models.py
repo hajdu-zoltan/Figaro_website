@@ -35,14 +35,22 @@ class Hairdresser(models.Model):
     def __str__(self):
         return f"name: {self.name}, description: {self.description}, phone: {self.phone}, occupation: {self.occupation}"
 
-class Booked_appointmentss(models.Model):
+class Booked_appointments(models.Model):
     date = models.DateField()
     time = models.TimeField()
-    user_id = models.ForeignKey(User, on_delete=models.CASCADE)
     email = models.CharField(max_length=100)
     phone = models.CharField(max_length=50)
     name = models.CharField(max_length=100)
 
     def __str__(self):
-        return f"date: {self.date}, user_id: {self.user_id}, email: {self.email}, phone: {self.phone}, name:{self.name}"
-    
+        return f"date: {self.date}, email: {self.email}, phone: {self.phone}, name:{self.name}"
+
+class Booked_appointments1(models.Model):
+    date = models.DateField()
+    time = models.TimeField()
+    email = models.CharField(max_length=100)
+    phone = models.CharField(max_length=50)
+    name = models.CharField(max_length=100)
+
+    def __str__(self):
+        return f"date: {self.date}, email: {self.email}, phone: {self.phone}, name:{self.name}"
