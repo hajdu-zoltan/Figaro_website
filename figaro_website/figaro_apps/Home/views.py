@@ -91,8 +91,8 @@ def confirmation(request):
         _code = request.POST.get('code')
 
 def register(request):
-    form = Myform(request.POST)
-    form = Myform()
+    form = FormWithCaptcha(request.POST)
+    form = FormWithCaptcha()
     _name = ''
     _email = ''
     _password = ''
@@ -100,7 +100,7 @@ def register(request):
     _phone=''
         
     if request.method == 'POST':
-        form = Myform(request.POST)
+        form = FormWithCaptcha(request.POST)
         _name = request.POST.get('name')
         _email = request.POST.get('email')
         _password = request.POST.get('password')
@@ -128,7 +128,7 @@ def register(request):
         else:
              messages.success(request, "Nem megfelelően töltötte ki az adatokat!")          
     else:
-        form = Myform()
+        form = FormWithCaptcha()
     return render(request, "Registration.html", {'actual_page': 'registration', 'form': form, 'email':_email, 'name':_name, 'password':_password, 'forget_password':_forget_password, 'phone':_phone})
 
 
