@@ -1,4 +1,10 @@
+
 {% extends 'base.html' %}
+
+
+{% load crispy_forms_tags %}         
+<script src="https://www.google.com/recaptcha/api.js" async defer></script>
+<!--Register--> 
 
 {% block content %}
     {% if  warning is not None %}
@@ -30,32 +36,38 @@
                             {% endfor %}
                           {% endif %}
                         </div>
-                        
-                       
                         <div class="form-outline form-white mb-4">
-                          <input type="email" id="typeEmailX" name="email" class="form-control form-control-lg" value="{{email}}" />
-                          <label class="form-label" for="typeEmailX">Email</label>
+                          {{form.username}}
+                          <label class="form-label" for="typeName">Felhasználónév</label>
                         </div>
-
+                        
+                        <div class="row">
+                          <div class="form-outline form-white col-md-01 col-lg-6 col-xl-6">
+                            {{form.last_name}}
+                            <label class="form-label" for="typeName">Vezetéknév</label>
+                          </div>
+                          <div class="form-outline form-white col-md-01 col-lg-6 col-xl-6">
+                            {{form.first_name}}
+                            <label class="form-label" for="typeName">Keresztnév</label>
+                          </div>
+                        </div>
+                        
                         <div class="form-outline form-white mb-4">
-                          <input type="text" id="text" name="name" class="form-control form-control-lg" value="{{name}}" />
-                          <label class="form-label" for="typeName">Név</label>
+                          {{form.email}}
+                          <label class="form-label" for="typeEmailX">E-mail-cím</label>
                         </div>
           
                         <div class="form-outline form-white mb-4">
-                          <input type="password" id="typePasswordX" name="password" class="form-control form-control-lg" value="{{password}}" />
+                          {{form.password1}}
                           <label class="form-label" for="typePasswordX">Jelszó</label>
                         </div>
         
                         <div class="form-outline form-white mb-4">
-                            <input type="password" id="typePasswordX" name="forget_password" class="form-control form-control-lg" value="{{forget_password}}" />
-                            <label class="form-label" for="typePasswordX">Jelszó ellenőrzés</label>
+                          {{form.password2}}
+                          <label class="form-label" for="typePasswordX">Jelszó ellenőrzés</label>
                         </div>
         
-                        <div class="form-outline form-white mb-4">
-                            <input type="phone" maxlength="12" id="typePasswordX" name="phone" class="form-control form-control-lg" value="{{phone}}" />
-                            <label class="form-label" for="typePasswordX">Telefonszám</label>
-                        </div>
+                        
                         <div class="form-outline form-white mb-4">
                           <div class="g-recaptcha" data-sitekey="6LdLXOMiAAAAAIrk7xvnfv0xo0oyU7kmcIv4zY2Z"></div>
                         </div>
@@ -77,5 +89,4 @@
             </div>
           </section>
     </form>
-{% endblock content %}  
-
+  {% endblock content %}  

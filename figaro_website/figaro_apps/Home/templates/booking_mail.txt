@@ -1,0 +1,8 @@
+{% autoescape off %}
+Tisztelt {{ name }}!
+
+Időpont foglalása sikeresen megtörtént.
+Az időpontja a következő: {{date}} {{time}} .
+
+Üdvözlettel Figaro.'
+{% endautoescape %}

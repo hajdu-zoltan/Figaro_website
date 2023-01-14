@@ -15,17 +15,16 @@
                             </div>
                             <form method="POST">
                                 {% csrf_token %}
-                                <div class="form-group">
-                                        <input class="form-control" value="{{name}}" name="name" type="text" placeholder="Név">
-                                        <span class="form-label">Destination</span>
+                                    <div class="form-group">
+                                        <input class="form-control" value="{% if user.is_authenticated %}{{user.last_name}} {{user.first_name}}{%else%}{{name}}{%endif%}" name="name" type="text" placeholder="Név">   
                                     </div>
                                     <div class="form-group">
-                                        <input class="form-control" value="{{email}}" name="email" type="text" placeholder="Email">
-                                        <span class="form-label">Email</span>
+                                        <input class="form-control" value="{% if user.is_authenticated %}{{user.email}}{%else%}{{email}}{%endif%}" name="email" type="text" placeholder="E-mail-cím">
+                                        <span class="form-label">E-mail-cím</span>
                                     </div>
                                     <div class="form-group">
                                         <input class="form-control" name="phone" type="text" placeholder="Telefonszám">
-                                        <span class="form-label">Email</span>
+                                        <span class="form-label">Phone</span>
                                     </div>
                                     <div class="form-group"> 
                                         <select class="form-control" name="category" required>

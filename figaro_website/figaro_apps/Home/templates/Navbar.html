@@ -1,7 +1,7 @@
 {% load static %}
 <nav class="navbar navbar-expand-lg navbar-dark">
     <a class="navbar-brand" href="{% url 'Home' %}">
-        <img src="../static/image/logo_white.png" width="50" height="50" alt="">
+        <img src="../../../static/image/logo_white.png" width="50" height="50" alt="">
     </a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -28,14 +28,25 @@
           </div>
         </li>
       </ul>
-      <ul class="nav navbar-nav my-2 my-lg-0" style="margin-left: auto;">
-        <li class="nav-item {% if actual_page == 'login'%} active {% endif %}">
-            <a class="nav-link glyphicon glyphicon-user" href="{% url 'Login' %}">Bejelenkezés</a>
-        </li>
-        <li class="nav-item {% if actual_page == 'registration'%} active {% endif %}">
-          <a class="nav-link glyphicon glyphicon-user" href="{% url 'Registration' %}">Regisztráció</a>
-        </li>
-      </ul>
+      {% if user.is_authenticated %}
+        <ul class="nav navbar-nav my-2 my-lg-0" style="margin-left: auto;">
+          <li class="nav-item">
+              <a class="nav-link glyphicon glyphicon-user" href="{% url 'Logout' %}">Kijelentkezés</a>
+          </li>
+          <li class="nav-item">
+              <a class="nav-link glyphicon glyphicon-user" href="#">{{user.username}}</a>
+          </li>
+        </ul>
+      {% else %}
+        <ul class="nav navbar-nav my-2 my-lg-0" style="margin-left: auto;">
+          <li class="nav-item {% if actual_page == 'login'%} active {% endif %}">
+              <a class="nav-link glyphicon glyphicon-user" href="{% url 'Login' %}">Bejelenkezés</a>
+          </li>
+          <li class="nav-item {% if actual_page == 'registration'%} active {% endif %}">
+            <a class="nav-link glyphicon glyphicon-user" href="{% url 'Registration' %}">Regisztráció</a>
+          </li>
+        </ul>
+      {% endif %}
     </div>
   </nav>
 

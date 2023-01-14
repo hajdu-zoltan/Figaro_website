@@ -39,8 +39,10 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'Home',
-    'captcha'
+    'captcha',
+    'crispy_forms'
 ]
+
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
