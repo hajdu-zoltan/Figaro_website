@@ -3,7 +3,7 @@ document.addEventListener('DOMContentLoaded', function(){
     var today = new Date(),
         year = today.getFullYear(),
         month = today.getMonth(),
-        monthTag =["1","2","3","4","5","6","7","8","9","10","11","12"],
+        monthTag =["01","02","03","04","05","06","07","08","09","10","11","12"],
         day = today.getDate(),
         days = document.getElementsByTagName('td'),
         selectedDay,
@@ -37,7 +37,7 @@ document.addEventListener('DOMContentLoaded', function(){
             headMonth = document.getElementsByClassName('head-month');
   
             e?headDay[0].innerHTML = e : headDay[0].innerHTML = day;
-            headMonth[0].innerHTML = year +" . " + monthTag[month];        
+            headMonth[0].innerHTML = year +" . " + monthTag[month] + " . " + day;        
      };
     
     Calendar.prototype.drawDays = function() {
@@ -111,33 +111,110 @@ document.addEventListener('DOMContentLoaded', function(){
            date.setMinutes(date.getMinutes() + minutes);
            return date;
         }
+        function convert_to_seconds(dateTimeString){
+            const dateArray = dateTimeString.split(", ")[0].split(".");
+            const timeArray = dateTimeString.split(", ")[1].split(":");
+
+            const year = parseInt(dateArray[2]);
+            const month = parseInt(dateArray[1]) - 1;
+            const day = parseInt(dateArray[0]);
+            const hour = parseInt(timeArray[0]);
+            const minute = parseInt(timeArray[1]);
+            const second = parseInt(timeArray[2]);
+
+            const date = new Date(year, month, day, hour, minute, second);
+
+            const seconds = Math.floor(date.getTime() / 1000);
+            return seconds
+        }
         for(let i = 9; i < 20; i++){
             var date_= new Date(year, month, o.innerHTML)
             if(date_ != 'Invalid Date'){
             
                 // console.log(date_);
-                const newDate = addHours(date_, i);
-                var newDate1 = newDate.toLocaleString("ru-RU");
-                newDate.setTime(newDate.getTime() + (30 * 60 * 1000));
-                var newDate2 = newDate.toLocaleString("ru-RU");
+                var newDate1 = addHours(date_, i);
+                var newDate1 = newDate1.toLocaleString("ru-RU");
+                var newDate2 = addHours(date_, i);
+                newDate2.setTime(newDate2.getTime() + (15 * 60 * 1000));
+                var newDate2 = newDate2.toLocaleString("ru-RU");
+                var newDate3 = addHours(date_, i);
+                newDate3.setTime(newDate3.getTime() + (30 * 60 * 1000));
+                var newDate3 = newDate3.toLocaleString("ru-RU");
+                var newDate4 = addHours(date_, i);
+                newDate4.setTime(newDate4.getTime() + (45 * 60 * 1000));
+                var newDate4 = newDate4.toLocaleString("ru-RU");
+                console.log('newDate1: '+newDate1)
+                console.log('newDate2: '+newDate2)
+                console.log('newDate3: '+newDate3)
+                console.log('newDate4: '+newDate4)
                 var time= ""+i+":00"
-                var time2= ""+i+":30"
+                var time2= ""+i+":15"
+                var time3= ""+i+":30"
+                var time4= ""+i+":45"
                 var van1 = 0;
                 var van2 = 0;
-                
-                for(let y = 0; y < dates.length; y++){
-                    //console.log(dates[y]+' VS '+newDate1)
-                    if (dates[y] == newDate1 ){
-                        // console.log('ugyan az')
-                        // console.log(dates[y]+' VS '+newDate1)
-                        van1 = 1
+                var van3 = 0;
+                var van4 = 0;
+                for(let y = 0; y < dates2.length; y++){
+                    
+                    const timeString = dates2[y]['time'];
+                    const timeArray = timeString.split(":");
+                    const time = new Date();
+                    time.setHours(timeArray[0]);
+                    time.setMinutes(timeArray[1]);
+                    time.setSeconds(timeArray[2]);
+
+                    const booking_time_string = dates2[y]['booking_time'];
+                    const booking_time_Array2 = booking_time_string.split(":");
+                    const booking_time = new Date();
+                    booking_time.setHours(booking_time_Array2[0]);
+                    booking_time.setMinutes(booking_time_Array2[1]);
+                    booking_time.setSeconds(booking_time_Array2[2]);
+                    // console.log(time+ "add"+ time2)
+                    hour1 = time.getHours()
+                    hour2_ = booking_time.getHours()
+                    minute1 = time.getMinutes()
+                    minute2_ = booking_time.getMinutes()
+                    var theFutureTime = moment().hour(hour1).minute(minute1).add(hour2_,'hours').add(minute2_,'minutes').format("HH:mm:00");
+
+                   
+                    date__ = dates2[y]['date']
+                    date_time=''+dates2[y]['date']+', '+dates2[y]['time']+'';
+                    booking_datetime_long = ''+dates2[y]['date']+', '+theFutureTime;
+                    
+                    const booking_datetime=''+dates2[y]['date']+', '+dates2[y]['time']+'';
+                    const date_time_seconds = convert_to_seconds(booking_datetime);
+                    const booking_time_seconds = convert_to_seconds(booking_datetime_long);
+                    const newDate1_seconds = convert_to_seconds(newDate1);
+                    const newDate2_seconds = convert_to_seconds(newDate2);
+                    const newDate3_seconds = convert_to_seconds(newDate3);
+                    const newDate4_seconds = convert_to_seconds(newDate4);
+
+
+                    if ( barber_id == dates2[y]['hairdresser_id']){
+                        if (newDate1_seconds >= date_time_seconds && newDate1_seconds<= booking_time_seconds){
+                            console.log(date_time +'<=' +newDate1+ '<='+ booking_datetime)
+                            console.log('ugyan az !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!')
+                            // console.log(dates[y]+' VS '+newDate1)
+                            van1 = 1
+                        }
+                        if (newDate2_seconds >= date_time_seconds && newDate2_seconds<= booking_time_seconds){
+                            van2 = 1
+                        }
+                        if (newDate3_seconds >= date_time_seconds && newDate3_seconds<= booking_time_seconds){
+                            van3 = 1
+                        }
+                        if (newDate4_seconds >= date_time_seconds && newDate4_seconds<= booking_time_seconds){
+                            van4 = 1
+                            console.log(4)
+                        }
                     }
-                    if (dates[y] == newDate2 || dates[y] <= today){
-                        van2 = 1
-                    }
+
                     if(date_ <= today){
                         van1 = 1
                         van2 = 1
+                        van3 = 1
+                        van4 = 1
                     }
                 }
                 if(van1 ==  0){
@@ -173,6 +250,42 @@ document.addEventListener('DOMContentLoaded', function(){
                         <input class="radio__input" name="time" type="radio" value="'+time2+'" id="&quot;'+time2+'&quot;">\
                         <label class="radio__label" for="&quot; '+time2+'&quot;">\
                             <div class="chip__label reserved" id ="'+time2+'_">'+time2+'</div>\
+                        </label>\
+                    </div>'
+                }
+                if(van3 ==  0){
+                    appointmets+='\
+                    <div class="radio__button chip" id ="'+time3+'" onclick="selected_time(this.id)">\
+                        <input class="radio__input" name="time" type="radio" value="'+time3+'" id="&quot;'+time3+'&quot;">\
+                        <label class="radio__label" for="&quot; '+time3+'&quot;">\
+                            <div class="chip__label" id ="'+time3+'_">'+time3+'</div>\
+                        </label>\
+                    </div>'
+                }
+                else{
+                    appointmets+='\
+                    <div class="radio__button chip reserved_container" id ="'+time3+'" onclick="selected_time(this.id)">\
+                        <input class="radio__input" name="time" type="radio" value="'+time3+'" id="&quot;'+time3+'&quot;">\
+                        <label class="radio__label" for="&quot; '+time3+'&quot;">\
+                            <div class="chip__label reserved" id ="'+time3+'_">'+time3+'</div>\
+                        </label>\
+                    </div>'
+                }
+                if(van4 ==  0){
+                    appointmets+='\
+                    <div class="radio__button chip" id ="'+time4+'" onclick="selected_time(this.id)">\
+                        <input class="radio__input" name="time" type="radio" value="'+time4+'" id="&quot;'+time4+'&quot;">\
+                        <label class="radio__label" for="&quot; '+time4+'&quot;">\
+                            <div class="chip__label" id ="'+time4+'_">'+time4+'</div>\
+                        </label>\
+                    </div>'
+                }
+                else{
+                    appointmets+='\
+                    <div class="radio__button chip reserved_container" id ="'+time4+'" onclick="selected_time(this.id)">\
+                        <input class="radio__input" name="time" type="radio" value="'+time4+'" id="&quot;'+time4+'&quot;">\
+                        <label class="radio__label" for="&quot; '+time4+'&quot;">\
+                            <div class="chip__label reserved" id ="'+time4+'_">'+time4+'</div>\
                         </label>\
                     </div>'
                 }
@@ -270,9 +383,13 @@ const radioButtons = document.querySelectorAll('input[name="time"]');
 function selected_time(id){
     for(let i = 9; i < 20; i++){
         var time= ""+i+":00_"
-        var time2= ""+i+":30_"
+        var time2= ""+i+":15_"
+        var time3= ""+i+":30_"
+        var time4= ""+i+":45_"
         document.getElementById(time).style.backgroundColor = "rgb(50 255 43)";
         document.getElementById(time2).style.backgroundColor = "rgb(50 255 43)";
+        document.getElementById(time3).style.backgroundColor = "rgb(50 255 43)";
+        document.getElementById(time4).style.backgroundColor = "rgb(50 255 43)";
     }
     
     let selectedSize;

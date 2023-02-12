@@ -22,9 +22,10 @@ class Price(models.Model):
     barber_name = models.CharField(max_length=50)
     description= models.CharField(max_length=200)
     categori = models.BigIntegerField()
+    time = models.CharField(max_length=8)
 
     def __str__(self):
-        return f"tittle: {self.tittle}, price: {self.price}, barber_name: {self.barber_name}, description: {self.description}, categori: {self.categori}"
+        return f"tittle: {self.tittle}, price: {self.price}, barber_name: {self.barber_name}, description: {self.description}, categori: {self.categori}, time: {self.time}"
 
 class Hairdresser(models.Model):
     name = models.CharField(max_length=100)
@@ -51,6 +52,8 @@ class Booked_appointments1(models.Model):
     email = models.CharField(max_length=100)
     phone = models.CharField(max_length=50)
     name = models.CharField(max_length=100)
+    hairdresser_id =models.BigIntegerField()
+    categori= models.ForeignKey(Price, db_column='categori', on_delete=models.CASCADE)
 
     def __str__(self):
-        return f"date: {self.date}, email: {self.email}, phone: {self.phone}, name:{self.name}"
+        return f"date: {self.date}, email: {self.email}, phone: {self.phone}, name:{self.name}, hairdresser_id:{self.hairdresser_id}, categori:{self.categori}"

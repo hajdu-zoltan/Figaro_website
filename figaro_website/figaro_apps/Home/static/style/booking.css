@@ -497,3 +497,9 @@ opacity: 0.6;
   opacity: 0.6;
 }
 
+#calendar_container{
+  display: none;
+}
+.option_image {
+ background-image: url("https://example.com/volvo.png");
+}

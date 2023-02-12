@@ -1,5 +1,7 @@
 "use strict";
-
+function clicked(id){
+    bulletButtons[id].click();
+}
 function Calendar(id, size, labelSettings, colors, options) {
     this.id = id;
     this.size = size;

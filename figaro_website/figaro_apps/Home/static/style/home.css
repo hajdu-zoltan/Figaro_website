@@ -5,10 +5,17 @@
 	background-color:#212121;
 	padding:3px 0px;
 	color:#FFF;
+	width: 60%;
+    margin: auto;
 }
-
+a:visited {
+	/* color: #FFF; */
+  }
 .addres_and_info{
 	background-color:#212121;
+}
+.info_text{
+	color: white ;
 }
 
 .info_text, .icon{
@@ -116,4 +123,7 @@
 	.main_info_container{
 		max-height: 294px;
 	}
+}
+.swiper-slide{
+	background-color: #fff0;
 }

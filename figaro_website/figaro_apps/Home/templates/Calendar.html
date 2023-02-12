@@ -4,6 +4,14 @@
 <div class="row">
     <script type="text/javascript"> 
         var booked_appointments = "{{booked_appointments}}";
+        console.log(booked_appointments)
+        var _booked_appointments =[];
+        {% for price_ in price %}
+        {% comment %} <option value={{price_.id}}>{{price_.tittle}} {{price_.price}} Ft</option> {% endcomment %}
+            var a = {id: "{{booked_appointments.id}}", categori_time:"{{booked_appointments.categori}}"}
+            _booked_appointments.push(a)
+            console.log(_booked_appointments)
+        {% endfor %}
     </script>
     <div class="col-md-6">
         <div class="elegant-calencar">
@@ -93,10 +101,15 @@
     <div class="col-md-6 appointments" id="demo" style="overflow: auto;">
         <script>
             var dates = [];
+            var dates2 = [];
             {% for i in booked_appointments  %}
-                dates.push("{{ i.date|date:"d.m.Y"}}, {{i.time|time:"H:i:s"}}")
+                var a ={date:"{{ i.date|date:"d.m.Y"}}", time:"{{i.time|time:"H:i:s"}}", hairdresser_id:"{{i.hairdresser_id}}", booking_time:"{{i.categori.time}}"}
+                dates2.push(a)
+                dates.push("{{ i.date|date:"d.m.Y"}}, {{i.time|time:"H:i:s"}}, {{i.categori.time}}")
+                console.log(dates2)
                 {% comment %} <p style='color: white;'>{{i.date}}</p> {% endcomment %}
             {% endfor %}
+
         </script>
         {% comment %} {% for i in number %}
             <div class="radio__button chip" onclick="selected_time()">

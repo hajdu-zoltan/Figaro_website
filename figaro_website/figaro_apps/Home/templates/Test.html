@@ -1,86 +1,71 @@
-{% extends 'base.html' %}
+<!DOCTYPE html>
+<html lang="en">
 
-{% block content %}
-<link rel="stylesheet" href="../static/style/test.css">
-<script src="../static/js/test.js"></script>
-<div class="row" >
-    <div class="col">
-        <div id="calendarContainer"></div>
-		<div id="organizerContainer"></div>
-		<script src="../calendarorganizer.min.js"></script>
-		<script>
-			"use strict";
+<head>
+  <meta charset="utf-8" />
+  <title>Swiper demo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1" />
+  <!-- Link Swiper's CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
 
-			// function that creates dummy data for demonstration
-			function createDummyData() {
-				var date = new Date();
-				var data = {};
+  <!-- Demo styles -->
+  <style>
+    html,
+    body {
+      position: relative;
+      height: 100%;
+    }
 
-				for (var i = 0; i < 10; i++) {
-					data[date.getFullYear() + i] = {};
+    body {
+      background: #eee;
+      font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+      font-size: 14px;
+      color: #000;
+      margin: 0;
+      padding: 0;
+    }
 
-					for (var j = 0; j < 12; j++) {
-						data[date.getFullYear() + i][j + 1] = {};
+    .swiper {
+      width: 100%;
+      height: 100%;
+    }
 
-						for (var k = 0; k <30; k++) {
-							var l = 10;
-                            console.log(l)
+    .swiper-slide {
+      text-align: center;
+      font-size: 18px;
+      background: #fff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
 
-							try {
-								data[date.getFullYear() + i][j + 1][l].push({
-									startTime: "10:00",
-									endTime: "12:00",
-									text: "Some Event Here1"
-								});
-							} catch (e) {
-								data[date.getFullYear() + i][j + 1][l] = [];
-								data[date.getFullYear() + i][j + 1][l].push({
-									startTime: "10:00",
-									endTime: "12:00",
-									text: "Some Event Here2"
-								});
-							}
-						}
-					}
-				}
+    .swiper-slide img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
 
-				return data;
-			}
+    .swiper-pagination-bullet {
+      width: 20px;
+      height: 20px;
+      text-align: center;
+      line-height: 20px;
+      font-size: 12px;
+      color: #000;
+      opacity: 1;
+      background: rgba(0, 0, 0, 0.2);
+    }
 
-			// creating the dummy static data
-			var data = createDummyData();
+    .swiper-pagination-bullet-active {
+      color: #fff;
+      background: #007aff;
+    }
+  </style>
+</head>
 
-			// initializing a new calendar object, that will use an html container to create itself
-			var calendar = new Calendar("calendarContainer", // id of html container for calendar
-				"small", // size of calendar, can be small | medium | large
-				[
-					"Wednesday", // left most day of calendar labels
-					3 // maximum length of the calendar labels
-				], [
-					"#ffc107", // primary color
-					"#ffa000", // primary dark color
-					"#ffffff", // text color
-					"#ffecb3" // text dark color
-				],
-				{
-					// placeholder: "" // Removes Organizer's Placeholder
-					placeholder: "<button style='width: calc(100% - 16px); background-color: #E6E6E6; border-radius: 6px; margin: 8px; border: none; padding: 12px 0px; cursor: pointer;'>Add New Event</button>",
-					indicator: true,
-					indicator_type: 0, // indicator type, can be 0 (not numeric) | 1 (numeric)
-					indicator_pos: "top" // indicator position, can be top | bottom
-				}
-			);
+<body>
+ 
+</body>
 
-			// initializing a new organizer object, that will use an html container to create itself
-			var organizer = new Organizer("organizerContainer", // id of html container for calendar
-				calendar, // defining the calendar that the organizer is related to
-				data // giving the organizer the static data that should be displayed
-			);
-		</script>
-    </div>
-</div>
-
-
-
-{% endblock content %} 
-
+</html>

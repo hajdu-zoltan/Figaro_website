@@ -64,8 +64,8 @@
  .pre-button, .next-button {
      /* margin-top: 2em; */
      font-size: 3em;
-     -webkit-transition: -webkit-transform 0.5s;
-     transition: transform 0.5s;
+     /* -webkit-transition: -webkit-transform 0.5s;
+     transition: transform 0.5s; */
      cursor: pointer;
      width: 1em;
      height: 1em;
@@ -73,7 +73,7 @@
      color: #e66b6b;
      border-radius: 50%;
  }
- 
+/*  
  .pre-button:hover, .next-button:hover {
      -webkit-transform: rotate(360deg);
      -ms-transform: rotate(360deg);
@@ -84,7 +84,7 @@
      -webkit-transform: scale(0.7);
      -ms-transform: scale(0.7);
      transform: scale(0.7);
- }
+ } */
  .next_pre_buttons_container{
     width: 100%;
  }
@@ -107,6 +107,7 @@
      font-size: 2em;
      line-height: 1;
      color: #fff;
+     display: none;
  }
  
  .head-month {

@@ -36,11 +36,10 @@ def navbar(request):
     return render(request, "Navbar.html", {'actual_page': 'navbar'})
 
 def home(request):
-    asd="asd"
-    return render(request, "Home.html", {'actual_page': 'home', 'user_id':user_id, 'price_datas':price_datas, 'hairdressers':hairdressers})
+    return render(request, "Home.html", {'actual_page': 'home', 'range':range(12), 'user_id':user_id, 'price_datas':price_datas, 'hairdressers':hairdressers})
 
 def gallery(request):
-    return render(request, "Gallery.html", {'actual_page': 'gallery', 'user_id':user_id})
+    return render(request, "Gallery.html", {'actual_page': 'gallery', 'user_id':user_id, 'range':range(15)})
 
 def price(request):
     if request.method == 'GET':
@@ -62,31 +61,42 @@ def booking(request):
     _name = None
     _email = None
     _phone= None
-    _category= None
+    _categori_id= None
     booked_appointments = Booked_appointments1.objects.all()
     price = Price.objects.all()
     if request.method == 'GET':
-        return render(request, "Booking.html", {'actual_page': 'booking', 'user_id':user_id, 'price':price,'booked_appointments':booked_appointments,'number':range(9,20)})
+        hairdresser_id = request.GET.get('hairdresser_id', -1)
+        categori_id = request.GET.get('categori_id', -1)
+        return render(request, "Booking.html", {'actual_page': 'booking', 'user_id':user_id, 'price':price,'booked_appointments':booked_appointments,'number':range(9,20), 'hairdressers':hairdressers, 'hairdresser_id':int(hairdresser_id), 'categori_id':int(categori_id)})
     elif request.method == 'POST':
         _name = request.POST.get('name')
         _email = request.POST.get('email')
         _phone = request.POST.get('phone')
-        _category = request.POST.get('category')
+        _hairdresser_id = int(request.POST.get('hairdresser_id'))
+        _categori_id = int(request.POST.get('category'))
         _date = request.POST.get('date')
         _date = datetime.strptime(_date, '%Y. %m. %d. %H:%M:%S')
         _time = request.POST.get('time')
         form = FormWithCaptcha(request.POST)
         errors=0
         if form.is_valid():
-            if _name == '' or _email == '' or _phone == '' or _category == '' or _date == '' or _time == '':
+            if _name == '' or _email == '' or _phone == '' or _categori_id == '' or _date == '' or _time == '' or _hairdresser_id == '':
                 errors+=1
                 messages.success(request, "Tölsd ki az összes mezőt!")
                 return render(request, "Booking.html", {'actual_page': 'booking', 'user_id':user_id, 'price':price,'booked_appointments':booked_appointments,'number':range(9,20),'email':_email, 'name':_name})
 
             if errors == 0:
-                Booked_appointments_ = Booked_appointments1(date=_date, time=_time, email=_email, phone=_phone, name=_name)
+                Booked_appointments_ = Booked_appointments1(
+                    date=_date,
+                    time=_time,
+                    email=_email,
+                    phone=_phone,
+                    name=_name,
+                    hairdresser_id=_hairdresser_id,
+                    categori=Price.objects.get(id = _categori_id)
+                )
                 Booked_appointments_.save()
-                code = '1234'
+                _hairdresser=Hairdresser.objects.get(id = _hairdresser_id)
                 _date=str(_date).split(' ')
                 subject="Időpont fogalalás"
                 email_template_name = "booking_mail.txt"
@@ -98,10 +108,10 @@ def booking(request):
                 email = render_to_string(email_template_name, c)
                 send_mail(subject, email, 'figaroszeged@gmail.com' , [_email], fail_silently=False)
                 
-                return render(request, "Successful_booking.html", {'actual_page': 'booking', 'user_id':user_id, 'email':_email, 'name':_name, 'date':_date[0], 'time':_time})
+                return render(request, "Successful_booking.html", {'actual_page': 'booking', 'user_id':user_id, 'email':_email, 'name':_name, 'date':_date[0], 'time':_time, 'hairdresser':_hairdresser, 'categori':Price.objects.get(id = _categori_id)})
         else:
             messages.success(request, "Nem megfelelően töltötte ki az adatokat!")
-            return render(request, "Booking.html", {'actual_page': 'booking', 'user_id':user_id, 'price':price,'booked_appointments':booked_appointments,'number':range(9,20),'email':_email, 'name':_name})
+            return render(request, "Booking.html", {'actual_page': 'booking', 'user_id':user_id, 'price':price,'booked_appointments':booked_appointments,'number':range(9,20),'email':_email, 'name':_name,'hairdressers':hairdressers, 'hairdresser_id':int(_hairdresser_id), 'categori_id':_categori_id})
 
         return render(request, "Registration.html", {'actual_page': 'conformation', 'code': code})
 
@@ -224,7 +234,7 @@ def password_reset_request(request):
 					email_template_name = "password_reset_email.txt"
 					c = {
 					"email":user.email,
-					'domain':'192.168.0.19',
+					'domain':'192.168.1.69',
 					'site_name': 'Website',
 					"uid": urlsafe_base64_encode(force_bytes(user.pk)),
 					"user": user,
