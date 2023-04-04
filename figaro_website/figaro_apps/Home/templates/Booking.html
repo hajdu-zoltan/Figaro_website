@@ -100,6 +100,7 @@
 {%endcomment%}
 
 <form method="POST">
+    {% csrf_token %}  
     <script src="https://www.google.com/recaptcha/api.js" async defer></script>
     <input type="hidden" name="csrfmiddlewaretoken" value="VCfKGe29bZ3a9XlJ1USX65UDDpPhRWhzyYvBLgNUNE4n6xp7LWEFvxzM8qfUuCdS">
     <section class=" gradient-custom" style="margin-bottom: 50px;">
