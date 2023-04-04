@@ -3,43 +3,30 @@
 <link rel="stylesheet" href="../static/style/home.css">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
 <script src="../static/js/video.js"></script>
-
-
-<div class="container-fluid" style="margin-top: 20px; padding-left: 10%; padding-right: 10%;">
-    <div class="row">
-        <div class="col-lg-6 mb-4 mb-lg-0 main_info_container" style="padding: 15px;">
-          <div class="main_info_box animated-box in">
-            <div class="main_info_tittle">
-              <h3>Figaro Hair Salon és Barber</h3>
-            </div>
-            <div class="main_info_text">
-              <p>Szeged szívében a Somogyi utca 16. szám alatt található Figaro Hair Salonban várunk sok szeretettel.
-                Gyönyörű hajra esetleg vagány szakállra vágysz? Nézz be hozzánk és mi valóra váltjuk elképzeléseidet.
-              </p>
-              <div class="row"> 
-                <div class="opening col-lg-6 mb-4">
-                  <h3>Nyitvatartás:</h3>
-                  <div>
-                    <p>Hétfő-Péntek: 8-20</p>
-                    <p> Szombaton: 8-12</p>
-                    <p> Vasárnap: Zárva</p>
-                  </div>
+<div>
+  <div class="container-fluid " style="margin-top: 20px; padding-left: 10%; padding-right: 10%;">
+    <div class="row d-flex align-items-center information_and_video_container" style="background-color: #17191b; border-radius: 10px;">
+      <div class="col-lg-6 main_info_container" id="_main_info_container" style="height: 17rem;" >
+        <div class="main_info_box animated-box in">
+          <div class="main_info_tittle">
+            <h3>Figaro Hair Salon és Barber</h3>
+          </div>
+          <div class="main_info_text">
+            <p>Szeged szívében a Somogyi utca 16. szám alatt található Figaro Hair Salonban várunk sok szeretettel.
+              Gyönyörű hajra esetleg vagány szakállra vágysz? Nézz be hozzánk és mi valóra váltjuk elképzeléseidet.
+            </p>
+            <div class="row"> 
+              <div class="opening col-lg-6 mb-4">
+                <h3>Nyitvatartás:</h3>
+                <div>
+                  <p>Hétfő-Péntek: 8-20</p>
+                  <p> Szombaton: 8-12</p>
+                  <p> Vasárnap: Zárva</p>
                 </div>
-                <div class="inf_box col-lg-6 mb-4 ">
-                  <h3>Névjegyek:</h3>
-                  <div class="info_box">
-                      <div class="icon">
-                          <img 
-                              src="../static/image/icons/phone.png"
-                              class="w-5 shadow-1-strong rounded mb-4"
-                              alt="Boat on Calm Water"
-                          />
-                      </div>
-                      <a class="info_text" style="color: white" href="tel:06305166371">
-                        06 30 516 6371
-                      </a>
-                  </div>
-                  <div class="info_box">
+              </div>
+              <div class="inf_box col-lg-6 mb-4 ">
+                <h3>Névjegyek:</h3>
+                <div class="info_box">
                     <div class="icon">
                         <img 
                             src="../static/image/icons/phone.png"
@@ -47,81 +34,88 @@
                             alt="Boat on Calm Water"
                         />
                     </div>
-                    <a class="info_text" style="color: white" href="tel:06202336300">
-                       06 20 233 6300
+                    <a class="info_text" style="color: white" href="tel:06305166371">
+                      06 30 516 6371
                     </a>
+                </div>
+                <div class="info_box">
+                  <div class="icon">
+                      <img 
+                          src="../static/image/icons/phone.png"
+                          class="w-5 shadow-1-strong rounded mb-4"
+                          alt="Boat on Calm Water"
+                      />
                   </div>
-                  <div class="info_box">
-                      <div class="icon">
-                          <img
-                              src="../static/image/icons/localtion.png"
-                              class="w-5 shadow-1-strong rounded mb-4"
-                              alt="Boat on Calm Water"
-                          />
-                      </div>
-                      <p class="info_text">
-                          Szeged Somogyi utca 16.
-                      </p>
-                  </div>
-                  <!-- <div class="info_box">
+                  <a class="info_text" style="color: white" href="tel:06202336300">
+                    06 20 233 6300
+                  </a>
+                </div>
+                <div class="info_box">
                     <div class="icon">
                         <img
-                            src="../static/image/icons/mail.png"
+                            src="../static/image/icons/localtion.png"
                             class="w-5 shadow-1-strong rounded mb-4"
                             alt="Boat on Calm Water"
                         />
-                        <p class="info_text">
-                          figarohairsalonszeged@gmail.com
-                      </p>
-                    </div> -->
-                  
+                    </div>
+                    <p class="info_text">
+                        Szeged Somogyi utca 16.
+                    </p>
                 </div>
               </div>
             </div>
-            
           </div>
         </div>
-        <div class="col-lg-6 mb-4 mb-lg-0" style="padding: 15px;">
-          {% block video %}
-              {% include 'Video.html' %}
-          {% endblock video %}
-        </div>
-    </div>
-</div>
-
-<div class="container-fluid" style="margin-top: 20px; padding-left: 10%; padding-right: 10%;">
-    <h2>Fodrászaink</h2>
-      <div class="row justify-content-around">
-        {% for hairdresser in hairdressers %}
-          <div class="col-lg-6 col-md-12 mb-4 mb-lg-0 hair_stylist" style="text-align: center;">
-              <div class="row">
-                <div class="col-lg-6 col-md-12 mb-4 mb-lg-0" style="text-align: center;">
-                    <img
-                    src="../static/image/fodraszok/{{hairdresser.id}}.jpg"
-                    class="w-100 shadow-1-strong rounded mb-2"
-                    alt="Kerekes Helga"
-                    />
-                </div>
-                <div class="col-lg-6 col-md-12 mb-4 mb-lg-0" style="text-align: center;">
-                  <h2>{{hairdresser.name}}</h2>
-                  <h3>{{hairdresser.occupation}}<br>
-                    {{hairdresser.phone}}</h3>
-                    <p style="text-align: left ;">{{hairdresser.description}}</p>
-                  
-                </div>
-                <div class="col-lg-12 col-md-12 mb-12 mb-lg-12" style="text-align: center;">
-                  </ul><a href="{% url 'Gallery' %}" class="booking_hair">Galéria</a><br>
-                  </ul><a href="{% url 'Price' %}" class="booking_hair">Árlista</a>     
-                </div>
-              </div>
-          </div>
-        {% endfor %}
+      </div>
+      <div class="col-lg-6 mb-6 mb-lg-6 video_container" style="padding: 15px;">
+        {% block video %}
+            {% include 'Video.html' %}
+        {% endblock video %}
+      </div>
     </div>
   </div>
-
+</div>
+<hr class="featurette-divider">
+<div class="d-md-flex flex-md-equal w-100 my-md-3 ps-md-3">
+  <div class="container-fluid" style="margin-top: 20px; padding-left: 10%; padding-right: 10%;">
+    <h2 class="mb-4" style="text-align: center;">Fodrászaink</h2>
+    <div class="row" style="text-align: center;">
+      
+      {% for hairdresser in hairdressers %}
+        <div class="col-lg-6 col-md-12 mb-4 mb-lg-0 ">
+          <div class="card hair_stylist w-90" style="border-radius: 15px;">
+            <div class="card-body text-center">
+              <div class="mt-3 mb-4">
+                <img
+                  src="../static/image/fodraszok/{{hairdresser.id}}.jpg"
+                  class="img-fluid rounded-circle profil_image"
+                  alt="Kerekes Helga"
+                />
+              </div>
+              <h2 class="mb-2">{{hairdresser.name}}</h2>
+              <p class="text-muted">{{hairdresser.occupation}}</p>
+              <a class="text-muted" style="color: white" href="tel:{{hairdresser.phone}}">
+                {{hairdresser.phone}}
+              </a><br>
+              <button class="btn btn-light" data-toggle="collapse" data-target="#info"style="width: 40%; margin-bottom: 5px; background-color: #ced2d6;">További információ</button><br>
+              <div id="info" class="collapse">
+                <p style="text-align: left ;">{{hairdresser.description}}</p>
+                <div class="d-grid gap-2 col-12 mx-auto">
+                </ul><a href="{% url 'Gallery' %}"class="btn btn-primary md1  " role="button" style="width: 60%; margin-bottom: 5px; background-color: #212121">Galéria</a>
+                </ul><a href="{% url 'Price' %}" class="btn btn-primary md1" style="width: 60%; background-color: #212121;">Árlista</a> 
+              </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      {% endfor %}
+  </div>
+</div>
+</div>
+<hr class="featurette-divider">
 <div class="container-fluid" style="margin-top: 20px; padding-left: 10%; padding-right: 10%;">
-    <h2>Aktuális áraink</h2>
-      <div class="row justify-content-around">
+    <h2 class="mb-4" style="text-align: center;">Aktuális áraink</h2>
+      <div class="row justify-content-around" style="height:40rem">
       <!-- Swiper -->
       <div class="swiper">
         <div class="swiper-wrapper">
@@ -171,10 +165,10 @@
       </div>
   </div>
 
-
+<hr class="featurette-divider">
 <div class="container-fluid" style="margin-top: 20px; padding-left: 10%; padding-right: 10%;">
-<h2>Munkáink</h2>
-    <div class="row justify-content-around">
+<h2 class="mb-4" style="text-align: center;">Munkáink</h2>
+<div class="row justify-content-around" style="height:30rem">
     <!-- Swiper -->
     <div class="swiper">
       <div class="swiper-wrapper">
@@ -252,6 +246,7 @@
     </div>
     </div>
 </div>
+<hr class="featurette-divider">
 <div class="container" style="margin-top: 20px;">
     <div class="row">
       <div class="col-lg-12 mb-12 mb-lg-12" style="padding: 15px;">

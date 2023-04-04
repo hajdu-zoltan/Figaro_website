@@ -2,9 +2,8 @@ var barber_id=-1
 function select_hairdresser(id){
     barber_id = id;
     const list = document.getElementById("price_list");
-    var options='';
+    var options=`<option value="" selected hidden>Válassz egy szolgáltatást</option>`;
     _price.forEach(function (item, index) {
-        console.log(item["categori"], id);
         var barber_name = "";
         if (id == 1){
             var barber_name = "Kerekes Helga";
@@ -19,5 +18,17 @@ function select_hairdresser(id){
       });
       console.log(options)
       list.innerHTML=options;
-      document.getElementById( 'calendar_container' ).style.display = 'block';
+}
+var category_time =""
+function select_category(category_id){
+    const list = document.getElementById("price_list");
+    _price.forEach(function (item, index) {
+        if(item["id"] == category_id){
+            console.log(item["id"])
+            category_time = item["time"]
+            
+        }  
+    });
+    document.getElementById( 'calendar_container' ).style.display = 'block';
+    document.getElementById("demo").innerHTML = '<h3 class="head-month">Válasz egy napot!</h3>';
 }

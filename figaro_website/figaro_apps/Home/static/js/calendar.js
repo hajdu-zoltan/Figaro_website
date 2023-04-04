@@ -81,19 +81,14 @@ document.addEventListener('DOMContentLoaded', function(){
     Calendar.prototype.clickDay = function(o) {
         var selected = document.getElementsByClassName("selected"),
             len = selected.length;
-            console.log(len)
         if(len !== 0){
             selected[0].className = "";
             
         }
-        console.log(selected)
         for (i = 0; i < selected.length; i++) {
             text = selected[i].innerText;
-            console.log(text)
           }
         
-        
-        console.log('select '+new Date(year, month, o.innerHTML))
         var actual_date= new Date(year, month, o.innerHTML)
         actual_date=actual_date.toLocaleString()
         // console.log(dates+' VS '+actual_date);
@@ -127,6 +122,19 @@ document.addEventListener('DOMContentLoaded', function(){
             const seconds = Math.floor(date.getTime() / 1000);
             return seconds
         }
+
+        function addTimeToTimestamp(timestamp, time) {
+            // Az idő értékét szétválasztjuk órákra, percekre és másodpercre
+            const [hours, minutes, seconds] = time.split(':').map(Number);
+            // Az idő értékét másodpercben számoljuk ki
+            console.log('minutes: '+ parseInt(minutes-1))
+            const timeInSeconds = hours * 3600 + parseInt(minutes-1) * 60 + seconds;
+            // Hozzáadjuk az idő értékét a timestamphez
+            const resultTimestamp = timestamp + timeInSeconds;
+            // Visszatérünk az eredménnyel
+            console.log('resultTimestamp: '+resultTimestamp)
+            return resultTimestamp;
+          }
         for(let i = 9; i < 20; i++){
             var date_= new Date(year, month, o.innerHTML)
             if(date_ != 'Invalid Date'){
@@ -143,10 +151,10 @@ document.addEventListener('DOMContentLoaded', function(){
                 var newDate4 = addHours(date_, i);
                 newDate4.setTime(newDate4.getTime() + (45 * 60 * 1000));
                 var newDate4 = newDate4.toLocaleString("ru-RU");
-                console.log('newDate1: '+newDate1)
-                console.log('newDate2: '+newDate2)
-                console.log('newDate3: '+newDate3)
-                console.log('newDate4: '+newDate4)
+                //var category_time_array = category_time.split(":")
+                // add 30 minutes to the time
+                //var newDate5 = addHours(date_, parseInt(category_time_array[0]));
+                //var newDate4 = newDate4.toLocaleString("ru-RU");
                 var time= ""+i+":00"
                 var time2= ""+i+":15"
                 var time3= ""+i+":30"
@@ -189,28 +197,28 @@ document.addEventListener('DOMContentLoaded', function(){
                     const newDate2_seconds = convert_to_seconds(newDate2);
                     const newDate3_seconds = convert_to_seconds(newDate3);
                     const newDate4_seconds = convert_to_seconds(newDate4);
-
+                    //const category_seconds = convert_to_seconds(category_date)
 
                     if ( barber_id == dates2[y]['hairdresser_id']){
-                        if (newDate1_seconds >= date_time_seconds && newDate1_seconds<= booking_time_seconds){
-                            console.log(date_time +'<=' +newDate1+ '<='+ booking_datetime)
-                            console.log('ugyan az !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!')
-                            // console.log(dates[y]+' VS '+newDate1)
+                        //console.log(newDate1_seconds+' vs '+ addTimeToTimestamp(newDate1_seconds, category_time))
+                        //console.log(addTimeToTimestamp(newDate1_seconds, category_time) + 'VS' + booking_time_seconds)
+                        //console.log(addTimeToTimestamp(newDate1_seconds, category_time) + 'VS' + date_time_seconds)
+                        console.log(''+newDate1+ ' + '+ category_time +' <= '+ booking_datetime)
+                        if (newDate1_seconds >= date_time_seconds && newDate1_seconds<= booking_time_seconds || addTimeToTimestamp(newDate1_seconds, category_time) >= date_time_seconds && addTimeToTimestamp(newDate1_seconds, category_time) <= booking_time_seconds){
                             van1 = 1
                         }
-                        if (newDate2_seconds >= date_time_seconds && newDate2_seconds<= booking_time_seconds){
+                        if (newDate2_seconds >= date_time_seconds && newDate2_seconds<= booking_time_seconds || addTimeToTimestamp(newDate2_seconds, category_time) >= date_time_seconds && addTimeToTimestamp(newDate2_seconds, category_time) <= booking_time_seconds){
                             van2 = 1
                         }
-                        if (newDate3_seconds >= date_time_seconds && newDate3_seconds<= booking_time_seconds){
+                        if (newDate3_seconds >= date_time_seconds && newDate3_seconds<= booking_time_seconds || addTimeToTimestamp(newDate3_seconds, category_time) >= date_time_seconds && addTimeToTimestamp(newDate3_seconds, category_time) <= booking_time_seconds){
                             van3 = 1
                         }
-                        if (newDate4_seconds >= date_time_seconds && newDate4_seconds<= booking_time_seconds){
+                        if (newDate4_seconds >= date_time_seconds && newDate4_seconds<= booking_time_seconds || addTimeToTimestamp(newDate4_seconds, category_time) >= date_time_seconds && addTimeToTimestamp(newDate4_seconds, category_time) <= booking_time_seconds){
                             van4 = 1
-                            console.log(4)
                         }
                     }
 
-                    if(date_ <= today){
+                    if(date_ < today){
                         van1 = 1
                         van2 = 1
                         van3 = 1
@@ -291,9 +299,9 @@ document.addEventListener('DOMContentLoaded', function(){
                 }
             }
             else{
-                console.log('valasz')
                 appointmets='<h3 class="head-month">Válasz egy napot!</h3>'
             }
+            
 
         }
         document.getElementById("demo").innerHTML = appointmets;
@@ -396,11 +404,9 @@ function selected_time(id){
     selectedSize = id;
     document.getElementById(id+'_').style.backgroundColor = "rgb(227 94 10)";
     // show the output:
-    console.log(id)
     document.getElementById('time').value=id;
     last_id=id
 };
 function btn_selected(id){
     document.getElementById(id).style.backgroundColor = "rgb(227 94 10)";
-    // console.log('selected')
 }

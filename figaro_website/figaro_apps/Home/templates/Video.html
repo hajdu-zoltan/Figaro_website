@@ -1,37 +1,28 @@
 {% load static %}
 <div id="myCarousel" class="carousel slide" data-interval="false">
-    <ol class="carousel-indicators">
-    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-    <li data-target="#myCarousel" data-slide-to="1"></li>
-    <li data-target="#myCarousel" data-slide-to="2"></li>
-    </ol>
-
     <div class="carousel-inner">
-    <div class="carousel-item active" id='activ_video'>
-        <video controls autoplay loop muted class="myvid" id="player" muted>
-            <source src="../static/video/fb.mp4" type="video/mp4">
-            </video>
-    </div>
-
-    <div class="carousel-item">
-        <video controls autoplay class="myvid" id="player2" muted>
-            <source src="../static/video/fb.mp4" type="video/mp4">
-            </video>
-    </div>
-
-    <div class="carousel-item">
+      <div class="carousel-item active" id='activ_video' style="height: 17rem;">
+        <video controls autoplay loop muted height="100%" class="myvid" id="player" muted>
+          <source src="../static/video/fb.mp4" type="video/mp4">
+        </video>
+      </div>
+      <div class="carousel-item"  style="height: 17rem;">
+        <video controls autoplay loop class="myvid" id="player2" muted>
+          <source src="../static/video/fb.mp4" type="video/mp4">
+        </video>
+      </div>
+      <div class="carousel-item" style="height: 17rem;">
         <video controls autoplay class="myvid" id="player3" muted>
             <source src="../static/video/fb.mp4" type="video/mp4">
-            </video>
+        </video>
+      </div>
     </div>
-    </div>
-
     <a class="carousel-control-prev" href="#myCarousel" onclick="stop_video()" role="button" data-slide="prev">
-    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-    <span class="sr-only">Vorige</span>
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="sr-only">Vorige</span>
     </a>
     <a class="carousel-control-next" href="#myCarousel" onclick="stop_video()" role="button" data-slide="next">
-    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-    <span class="sr-only">Volgende</span>
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="sr-only">Volgende</span>
     </a>
-</div>
+  </div>

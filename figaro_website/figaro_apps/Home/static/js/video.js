@@ -1,7 +1,7 @@
+
+
 let allVids = $("#myCarousel").find('.carousel-item');
-console.log('lejatszas');
 allVids.each(function(index, el) {
-  console.log('lejatszas2');
   if (index !== 0) {
     $(this).find('video')[0].pause();
   }
@@ -12,7 +12,6 @@ $("#myCarousel").on('slide.bs.carousel', function(ev) {
   let pvid = slides[ev.from].querySelectorAll('video')[0];
   let vid = slides[ev.to].querySelectorAll('video')[0];
   let isPlaying = vid.currentTime > 0 && vid.readyState > 2;
-  console.log('lejatszas3');
   vid.play();
 
   if (isPlaying) {
@@ -27,3 +26,18 @@ function stop_video(){
   vid1.pause();
   vid2.pause();
 }
+$(document).ready(function() {
+  // az oszlopokra vonatkozó kiválasztás
+  var columns = $('.main_info_container, .myvid');
+
+  // a legnagyobb magasság meghatározása
+  var maxHeight = Math.max.apply(
+    Math, columns.map(function() {
+      return $(this).height();
+    }).get()
+  );
+    console.log(maxHeight)
+  // az oszlopok magasságának beállítása a legnagyobb magasságra
+  columns.height(maxHeight);
+  document.getElementById("_main_info_container").style.maxHeight = ""+maxHeight+"px";
+});

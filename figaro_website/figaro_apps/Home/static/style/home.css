@@ -1,3 +1,9 @@
+/*
+#1795A8
+#24AFC1
+#FCCF47
+#F8F8F8
+*/
 .booking_hair{
     margin:1px 20px;
 	display:block;
@@ -6,6 +12,22 @@
 	padding:3px 0px;
 	color:#FFF;
 	width: 60%;
+    margin: auto;
+}
+
+.home_video_and_informations_container{
+	padding-left: 10%;
+	padding-right: 10%;
+	background-color: #17191b;
+	min-height: 40rem;
+}
+
+.profil_image{
+	width: 40%;
+}
+
+.description_text{
+	width: 80%;
     margin: auto;
 }
 a:visited {
@@ -30,16 +52,23 @@ a:visited {
 .h3{
 	font-size: 2.4vh;
 }
-.main_info_box{
-	color: #e9dede;
-	background-color: #343a40;
-    height: 100%;
-	background-image: url('../image/bg/black-textured-brick-wall-background.jpg');
+
+.information_and_video_container{
 	background-image: url('../image/bg/3185113.jpg');
   	background-repeat: no-repeat;  
 	background-size:cover;
 	background-position:center;
-	/* background: linear-gradient(170deg, #334b55 70%, #fc4410 30%); */
+	min-height: 30rem;
+}
+.main_info_box{
+	color: #e9dede;
+    height: 100%;
+	/*background-image: url('../image/bg/black-textured-brick-wall-background.jpg');
+	background-image: url('../image/bg/3185113.jpg');
+  	background-repeat: no-repeat;  
+	background-size:cover;
+	background-position:center;
+	background: linear-gradient(170deg, #334b55 70%, #fc4410 30%); */
 }
 .main_info_tittle{
 	text-align: center;
@@ -67,57 +96,8 @@ a:visited {
   
   
   /* The animation starts here */
-  .animated-box {
-	position: relative;
-  }
+ 
   
-  .animated-box:after {
-	content: '';
-	position: absolute;
-	top: 0;
-	left: 0;
-	right: 0;
-	bottom: 0;
-	border-radius: 4px;
-	background: linear-gradient(120deg, #00F260, #0575E6, #00F260);
-	background-size: 300% 300%;
-	clip-path: polygon(0% 100%, 3px 100%, 3px 3px, calc(100% - 3px) 3px, calc(100% - 3px) calc(100% - 3px), 3px calc(100% - 3px), 3px 100%, 100% 100%, 100% 0%, 0% 0%);
-  }
-  
-  .animated-box.in:after {
-	animation: frame-enter 1s forwards ease-in-out reverse, gradient-animation 4s ease-in-out infinite;
-  }
-  
-  /* motion */
-  @keyframes gradient-animation {
-	0% {
-	  background-position: 15% 0%;
-	}
-	50% {
-	  background-position: 85% 100%;
-	}
-	100% {
-	  background-position: 15% 0%;
-	}
-  }
-  
-  @keyframes frame-enter {
-	0% {
-	  clip-path: polygon(0% 100%, 3px 100%, 3px 3px, calc(100% - 3px) 3px, calc(100% - 3px) calc(100% - 3px), 3px calc(100% - 3px), 3px 100%, 100% 100%, 100% 0%, 0% 0%);
-	}
-	25% {
-	  clip-path: polygon(0% 100%, 3px 100%, 3px 3px, calc(100% - 3px) 3px, calc(100% - 3px) calc(100% - 3px), calc(100% - 3px) calc(100% - 3px), calc(100% - 3px) 100%, 100% 100%, 100% 0%, 0% 0%);
-	}
-	50% {
-	  clip-path: polygon(0% 100%, 3px 100%, 3px 3px, calc(100% - 3px) 3px, calc(100% - 3px) 3px, calc(100% - 3px) 3px, calc(100% - 3px) 3px, calc(100% - 3px) 3px, 100% 0%, 0% 0%);
-	}
-	75% {
-	  -webkit-clip-path: polygon(0% 100%, 3px 100%, 3px 3px, 3px 3px, 3px 3px, 3px 3px, 3px 3px, 3px 3px, 3px 0%, 0% 0%);
-	}
-	100% {
-	  -webkit-clip-path: polygon(0% 100%, 3px 100%, 3px 100%, 3px 100%, 3px 100%, 3px 100%, 3px 100%, 3px 100%, 3px 100%, 0% 100%);
-	}
-  }
   
 @media (min-width: 992px){
 	.main_info_container{
@@ -126,4 +106,13 @@ a:visited {
 }
 .swiper-slide{
 	background-color: #fff0;
+}
+.carousel-inner {
+    background: #1110;
+}
+
+.hair_stylist{
+	margin: auto;
+    width: 80%;
+    border-radius: 15px;
 }

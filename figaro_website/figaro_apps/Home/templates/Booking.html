@@ -1,4 +1,6 @@
 {% extends 'base.html' %}
+{% load crispy_forms_tags %}         
+<script src="https://www.google.com/recaptcha/api.js" async defer></script>
 
 {% block content %}
 <link rel="stylesheet" href="../static/style/booking.css">
@@ -12,6 +14,7 @@
         _price.push(a)
     {% endfor %}
  </script>
+ {%comment%}
 <div class="container" style="margin-top: 20px;">
     <div id="booking" class="section">
           <div class="section-center">
@@ -38,22 +41,16 @@
                                         <select class="form-control" name="hairdresser_id" onchange="select_hairdresser(this.value)" required>
                                         <option value="" hidden>Válassz fodrászt</option>
                                             {% for hairdresser in hairdressers %}
-                                                {%if hairdresser_id == hairdresser.id %}
-                                                    <option selected value={{hairdresser.id}}>
-                                                        {{hairdresser.name}}
-                                                    </option> 
-                                                {%else%}
-                                                    <option value={{hairdresser.id}}>
-                                                        {{hairdresser.name}}
-                                                    </option>
-                                                {% endif %}
+                                                <option {%if hairdresser_id == hairdresser.id %}selected {% endif %} value={{hairdresser.id}}>
+                                                    {{hairdresser.name}}
+                                                </option> 
                                             {% endfor %}
                                         </select>
                                         <span class="select-arrow"></span> 
                                         <span class="form-label">Adults</span> 
                                     </div> 
                                     <div class="form-group"> 
-                                        <select class="form-control" id="price_list" name="category" required>
+                                        <select class="form-control" id="price_list" onchange="select_category(this.value)" name="category" required>
                                         <option value="" selected hidden>Válassz egy szolgáltatást</option>
                                         {% for price_ in price %}
                                             {%if categori_id == price_.id %}
@@ -62,13 +59,11 @@
                                                 </option> 
                                             {%endif%}
                                         {% endfor %}    
-                                            {% comment %} {% for price_ in price %}
-                                                <option value={{int(price_.id)}}>{{price_.tittle}} {{price_.price}} Ft({{price_.time}})</option>
-                                            {% endfor %} {% endcomment %}
                                         </select>
                                         <span class="select-arrow"></span> 
                                         <span class="form-label">Adults</span> 
                                     </div>
+                                    {%comment%}
                                     {% block calendar %}
                                     {% if categori_id != -1 %}
                                         <div id="calendar_container" style="display: block;">
@@ -80,6 +75,7 @@
                                         </div>
                                     {% endif %}
                                     {% endblock calendar %}
+                                    
                                     <input class="form-control" id="date" name="date" type="text" placeholder="date">
                                     <input class="form-control" id="time" name="time" type="text" placeholder="time">
                                     <div class="row">
@@ -101,4 +97,109 @@
         </div> 
     </div>
 </div>
+{%endcomment%}
+
+<form method="POST">
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+    <input type="hidden" name="csrfmiddlewaretoken" value="VCfKGe29bZ3a9XlJ1USX65UDDpPhRWhzyYvBLgNUNE4n6xp7LWEFvxzM8qfUuCdS">
+    <section class=" gradient-custom" style="margin-bottom: 50px;">
+        <div class="container py-5">
+          <div class="row d-flex justify-content-center align-items-center h-100">
+            <div class="col-md-01 col-lg-7 col-xl-7">
+              <div class="card text-white" style="border-radius: 1rem; background: rgb(0 0 0 / 87%);">
+                <div class="card-body p-4 text-center">
+      
+                  <div class="mb-md-3 mt-md-2 pb-2">
+      
+                    <h2 class="fw-bold mb-2 text-uppercase">Időpontfoglalás</h2>
+                    <p class="text-white-70 mb-5">Kérlek add meg a szükséges adatokat!</p>
+                    <div>
+                      
+                    </div>
+                    <div class="form-outline form-white mb-4">
+                      <input type="text" name="name" maxlength="150" autofocus="" required="" id="id_username" value="{% if user.is_authenticated %}{{user.last_name}} {{user.first_name}}{%else%}{{name}}{%endif%}">
+                      <label class="form-label" for="typeName">Név</label>
+                    </div>
+                    {%comment%}
+                    <div class="row">
+                      <div class="form-outline form-white col-md-01 col-lg-6 col-xl-6">
+                        <input type="text" name="last_name" maxlength="150" id="id_last_name">
+                        <label class="form-label" for="typeName">Vezetéknév</label>
+                      </div>
+                      <div class="form-outline form-white col-md-01 col-lg-6 col-xl-6">
+                        <input type="text" name="first_name" maxlength="150" id="id_first_name">
+                        <label class="form-label" for="typeName">Keresztnév</label>
+                      </div>
+                    </div>
+                    {%endcomment%}
+                    <div class="form-outline form-white mb-4">
+                      <input type="email" required="" id="id_email" value="{% if user.is_authenticated %}{{user.email}}{%else%}{{email}}{%endif%}" name="email">
+                      <label class="form-label" for="typeEmailX">E-mail-cím</label>
+                    </div>
+      
+                    <div class="form-outline form-white mb-4">
+                      <input type="phone" name="phone" required="" class="booking_input">
+                      <label class="form-label" for="typePasswordX">Telefonszám</label>
+                    </div>
+    
+                    <div class="form-outline form-white mb-4">
+                        <select class="booking_input" name="hairdresser_id" onchange="select_hairdresser(this.value)" required>
+                            <option value="" hidden>Válassz fodrászt</option>
+                                {% for hairdresser in hairdressers %}
+                                    <option {%if hairdresser_id == hairdresser.id %}selected {% endif %} value={{hairdresser.id}}>
+                                        {{hairdresser.name}}
+                                    </option> 
+                                {% endfor %}
+                            </select>
+                            <span class="select-arrow"></span> 
+                            <span class="form-label">Fodrász</span> 
+                    </div>
+                    <div class="form-outline form-white mb-4">
+                        <select class="form-control booking_input" class="" id="price_list" onchange="select_category(this.value)" name="category" required>
+                            <option value="" selected hidden>Válassz egy szolgáltatást</option>
+                            {% for price_ in price %}
+                                {%if categori_id == price_.id %}
+                                    <option selected value={{price_.id}}>
+                                        {{price_.tittle}} {{price_.price}} Ft ({{price_.time}})
+                                    </option> 
+                                {%endif%}
+                            {% endfor %}    
+                            </select>
+                            <span class="select-arrow"></span> 
+                            <span class="form-label">Szolgáltatás</span> 
+                    </div>
+                    <div class="form-outline form-white mb-4">
+                        {% block calendar %}
+                            {% if categori_id != -1 %}
+                                <div id="calendar_container" style="display: block;">
+                                    {% include 'Calendar.html' %}
+                                </div>
+                            {% else %}
+                                <div id="calendar_container">
+                                    {% include 'Calendar.html' %}
+                                </div>
+                            {% endif %}
+                        {% endblock calendar %}
+                    </div>
+    
+                    
+                    <div class="row">
+                      <div class="col-md-01 col-lg-2 col-xl-2"></div>
+                      <div class="col-md-01 col-lg-8 col-xl-8">
+                          <div class="g-recaptcha" data-sitekey="6LdLXOMiAAAAAIrk7xvnfv0xo0oyU7kmcIv4zY2Z"></div>                      
+                        </div>
+                      <div class="col-md-01 col-lg-2 col-xl-2"></div>
+                    </div>
+                    <br>
+                    <input class="form-control" id="date" name="date" type="text" placeholder="date">
+                    <input class="form-control" id="time" name="time" type="text" placeholder="time">
+                    <input class="btn btn-outline-light btn-lg px-5 btn_login" name="register" type="submit" value="Időpont lefoglalása">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+</form>
 {% endblock content %}  

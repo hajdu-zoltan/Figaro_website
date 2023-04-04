@@ -9,16 +9,16 @@
     <div class="collapse navbar-collapse" id="navbarNavDropdown">
       <ul class="navbar-nav">
         <li class="nav-item {% if actual_page == 'home'%} active {% endif %}">
-          <a class="nav-link" href="{% url 'Home' %}">Kezdőlap <span class="sr-only">(current)</span></a>
+          <a class="nav-link nav_text" href="{% url 'Home' %}">Kezdőlap <span class="sr-only">(current)</span></a>
         </li>
         <li class="nav-item {% if actual_page == 'booking'%} active {% endif %}">
-          <a class="nav-link" href="{% url 'Booking' %}">Időpontfoglalás</a>
+          <a class="nav-link nav_text" href="{% url 'Booking' %}">Időpontfoglalás</a>
         </li>
         <li class="nav-item {% if actual_page == 'gallery'%} active {% endif %}">
-          <a class="nav-link" href="{% url 'Gallery' %}">Galéria</a>
+          <a class="nav-link nav_text" href="{% url 'Gallery' %}">Galéria</a>
         </li>
         <li class="nav-item dropdown {% if actual_page == 'price'%} active {% endif %}">
-          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <a class="nav-link dropdown-toggle nav_text" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             Árlista
           </a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
@@ -31,19 +31,19 @@
       {% if user.is_authenticated %}
         <ul class="nav navbar-nav my-2 my-lg-0" style="margin-left: auto;">
           <li class="nav-item">
-              <a class="nav-link glyphicon glyphicon-user" href="{% url 'Logout' %}">Kijelentkezés</a>
+              <a class="nav-link glyphicon glyphicon-user nav_text" href="{% url 'Logout' %}">Kijelentkezés</a>
           </li>
           <li class="nav-item">
-              <a class="nav-link glyphicon glyphicon-user" href="#">{{user.username}}</a>
+              <a class="nav-link glyphicon glyphicon-user nav_text" href="#">{{user.username}}</a>
           </li>
         </ul>
       {% else %}
         <ul class="nav navbar-nav my-2 my-lg-0" style="margin-left: auto;">
           <li class="nav-item {% if actual_page == 'login'%} active {% endif %}">
-              <a class="nav-link glyphicon glyphicon-user" href="{% url 'Login' %}">Bejelenkezés</a>
+              <a class="nav-link glyphicon glyphicon-user nav_text" href="{% url 'Login' %}">Bejelenkezés</a>
           </li>
           <li class="nav-item {% if actual_page == 'registration'%} active {% endif %}">
-            <a class="nav-link glyphicon glyphicon-user" href="{% url 'Registration' %}">Regisztráció</a>
+            <a class="nav-link glyphicon glyphicon-user nav_text" href="{% url 'Registration' %}">Regisztráció</a>
           </li>
         </ul>
       {% endif %}
