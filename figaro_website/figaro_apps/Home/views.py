@@ -21,6 +21,8 @@ from django.contrib.auth.tokens import default_token_generator
 from django.utils.encoding import force_bytes
 from django.contrib.auth.forms import PasswordResetForm
 from django.core.mail import send_mail, BadHeaderError
+from django.core.mail import EmailMultiAlternatives
+
 
 
 
@@ -55,6 +57,11 @@ def price_list_man(request):
     if request.method == 'GET':
         price_datas = Price.objects.all()
         return render(request, "Price_list.html", {'actual_page': 'price_list_man', 'user_id':user_id, 'price_datas': price_datas})
+    
+def price_list_examination(request):
+    if request.method == 'GET':
+        price_datas = Price.objects.all()
+        return render(request, "Price_list.html", {'actual_page': 'price_list_examination', 'user_id':user_id, 'price_datas': price_datas})
 
 
 def booking(request):
@@ -98,16 +105,22 @@ def booking(request):
                 Booked_appointments_.save()
                 _hairdresser=Hairdresser.objects.get(id = _hairdresser_id)
                 _date=str(_date).split(' ')
-                subject="Időpont fogalalás"
+                subject="Időpont foglalás megerősítése"
+                html_content = "booking_mail.html"
+                text_content = 'Ez egy példa email szöveges tartalommal.'
                 email_template_name = "booking_mail.txt"
                 c = {
 					"name": _name,
                     "date": _date[0],
-                    "time": _time
+                    "time": _time,
+                    "categori": Price.objects.get(id = _categori_id)
 					}
+                html_content = render_to_string("booking_mail.html", c)
                 email = render_to_string(email_template_name, c)
                 send_mail(subject, email, 'figaroszeged@gmail.com' , [_email], fail_silently=False)
-                
+                msg = EmailMultiAlternatives(subject, text_content, 'figaroszeged@gmail.com', [_email])
+                msg.attach_alternative(html_content, "text/html")
+                msg.send()
                 return render(request, "Successful_booking.html", {'actual_page': 'booking', 'user_id':user_id, 'email':_email, 'name':_name, 'date':_date[0], 'time':_time, 'hairdresser':_hairdresser, 'categori':Price.objects.get(id = _categori_id)})
         else:
             messages.success(request, "Nem megfelelően töltötte ki az adatokat!")

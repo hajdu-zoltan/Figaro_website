@@ -17,6 +17,7 @@ urlpatterns = [
     path('price/', views.price, name = 'Price'),
     path('price_list_man/', views.price_list_man, name = 'Price_man'),
     path('price_list_women/', views.price_list_women, name = 'Price_women'),
+    path('price_list_examination/', views.price_list_examination, name = 'Price_examination'),
     path('test/', views.test, name = 'Test'),
     path('password_reset/done/', auth_views.PasswordResetDoneView.as_view(template_name='Password_reset_done.html'), name='password_reset_done'),
     path('reset/<uidb64>/<token>/', auth_views.PasswordResetConfirmView.as_view(template_name="Password_reset_confirm.html"), name='password_reset_confirm'),

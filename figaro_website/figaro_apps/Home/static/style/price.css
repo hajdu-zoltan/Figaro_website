@@ -233,6 +233,11 @@ ul{
 	background-color:#fc4410;
 	color:#FFF;
 }
+
+.examination_price{
+	background-color:#4710fc !important;
+}
+
 .price_list_categori{
 	text-align: center;
 }

@@ -1,71 +1,29 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html>
 <head>
-  <meta charset="utf-8" />
-  <title>Swiper demo</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1" />
-  <!-- Link Swiper's CSS -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
-
-  <!-- Demo styles -->
-  <style>
-    html,
-    body {
-      position: relative;
-      height: 100%;
-    }
-
-    body {
-      background: #eee;
-      font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
-      font-size: 14px;
-      color: #000;
-      margin: 0;
-      padding: 0;
-    }
-
-    .swiper {
-      width: 100%;
-      height: 100%;
-    }
-
-    .swiper-slide {
-      text-align: center;
-      font-size: 18px;
-      background: #fff;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
-
-    .swiper-slide img {
-      display: block;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-
-    .swiper-pagination-bullet {
-      width: 20px;
-      height: 20px;
-      text-align: center;
-      line-height: 20px;
-      font-size: 12px;
-      color: #000;
-      opacity: 1;
-      background: rgba(0, 0, 0, 0.2);
-    }
-
-    .swiper-pagination-bullet-active {
-      color: #fff;
-      background: #007aff;
-    }
-  </style>
+  <link rel="stylesheet" href="../static/style/gallery.css">
 </head>
-
 <body>
- 
-</body>
+	<!-- Galéria képek -->
+	<div class="gallery">
+		<img src="../static/image/gallery/1.jpg" onclick="openModal(this)" />
+		<img src="../static/image/gallery/2.jpg" onclick="openModal(this)" />
+		<img src="../static/image/gallery/3.jpg" onclick="openModal(this)" />
+		<img src="../static/image/gallery/4.jpg" onclick="openModal(this)" />
+		<img src="../static/image/gallery/5.jpg" onclick="openModal(this)" />
+		<img src="../static/image/gallery/6.jpg" onclick="openModal(this)" />
+	</div>
 
+	<!-- Modális ablak -->
+	<div id="myModal" class="modal">
+		<div class="modal-content">
+			<span class="close" onclick="closeModal()">&times;</span>
+			<img id="modal-image" src="" />
+			<div class="prev" onclick="changeImage(-1)">&#10094;</div>
+			<div class="next" onclick="changeImage(1)">&#10095;</div>
+		</div>
+	</div>
+
+  <script src="../static/js/gallery.js"></script>
+</body>
 </html>

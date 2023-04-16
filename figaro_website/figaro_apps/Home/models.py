@@ -25,7 +25,7 @@ class Price(models.Model):
     time = models.CharField(max_length=8)
 
     def __str__(self):
-        return f"tittle: {self.tittle}, price: {self.price}, barber_name: {self.barber_name}, description: {self.description}, categori: {self.categori}, time: {self.time}"
+        return f"tittle: {self.tittle}, price: {self.price}, barber_name: {self.barber_name}, description: {self.description}, categori: {self.categori}, time: {self.time}, 'asd':'asd'"
 
 class Hairdresser(models.Model):
     name = models.CharField(max_length=100)

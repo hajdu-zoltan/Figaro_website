@@ -1,0 +1,483 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="600" height="200" viewBox="0 0 600 200" xml:space="preserve">
+<desc>Created with https://simplified.com</desc>
+<defs><style id="ea977926-a435-4f96-8004-3c1f2237afe3" data-type="fontFaceStyle">/* cyrillic-ext */
+@font-face {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 100;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/montserrat/v25/JTUSjIg1_i6t8kCHKm459WRhyzbi.woff2) format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+fontdisplay: swap; }
+/* cyrillic */
+@font-face {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 100;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/montserrat/v25/JTUSjIg1_i6t8kCHKm459W1hyzbi.woff2) format('woff2');
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+fontdisplay: swap; }
+/* vietnamese */
+@font-face {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 100;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/montserrat/v25/JTUSjIg1_i6t8kCHKm459WZhyzbi.woff2) format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+1EA0-1EF9, U+20AB;
+fontdisplay: swap; }
+/* latin-ext */
+@font-face {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 100;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/montserrat/v25/JTUSjIg1_i6t8kCHKm459Wdhyzbi.woff2) format('woff2');
+  unicode-range: U+0100-02AF, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+fontdisplay: swap; }
+/* latin */
+@font-face {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 100;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/montserrat/v25/JTUSjIg1_i6t8kCHKm459Wlhyw.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+fontdisplay: swap; }
+/* cyrillic-ext */
+@font-face {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 200;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/montserrat/v25/JTUSjIg1_i6t8kCHKm459WRhyzbi.woff2) format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+fontdisplay: swap; }
+/* cyrillic */
+@font-face {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 200;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/montserrat/v25/JTUSjIg1_i6t8kCHKm459W1hyzbi.woff2) format('woff2');
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+fontdisplay: swap; }
+/* vietnamese */
+@font-face {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 200;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/montserrat/v25/JTUSjIg1_i6t8kCHKm459WZhyzbi.woff2) format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+1EA0-1EF9, U+20AB;
+fontdisplay: swap; }
+/* latin-ext */
+@font-face {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 200;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/montserrat/v25/JTUSjIg1_i6t8kCHKm459Wdhyzbi.woff2) format('woff2');
+  unicode-range: U+0100-02AF, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+fontdisplay: swap; }
+/* latin */
+@font-face {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 200;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/montserrat/v25/JTUSjIg1_i6t8kCHKm459Wlhyw.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+fontdisplay: swap; }
+/* cyrillic-ext */
+@font-face {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/montserrat/v25/JTUSjIg1_i6t8kCHKm459WRhyzbi.woff2) format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+fontdisplay: swap; }
+/* cyrillic */
+@font-face {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/montserrat/v25/JTUSjIg1_i6t8kCHKm459W1hyzbi.woff2) format('woff2');
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+fontdisplay: swap; }
+/* vietnamese */
+@font-face {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/montserrat/v25/JTUSjIg1_i6t8kCHKm459WZhyzbi.woff2) format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+1EA0-1EF9, U+20AB;
+fontdisplay: swap; }
+/* latin-ext */
+@font-face {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/montserrat/v25/JTUSjIg1_i6t8kCHKm459Wdhyzbi.woff2) format('woff2');
+  unicode-range: U+0100-02AF, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+fontdisplay: swap; }
+/* latin */
+@font-face {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/montserrat/v25/JTUSjIg1_i6t8kCHKm459Wlhyw.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+fontdisplay: swap; }
+/* cyrillic-ext */
+@font-face {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/montserrat/v25/JTUSjIg1_i6t8kCHKm459WRhyzbi.woff2) format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+fontdisplay: swap; }
+/* cyrillic */
+@font-face {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/montserrat/v25/JTUSjIg1_i6t8kCHKm459W1hyzbi.woff2) format('woff2');
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+fontdisplay: swap; }
+/* vietnamese */
+@font-face {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/montserrat/v25/JTUSjIg1_i6t8kCHKm459WZhyzbi.woff2) format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+1EA0-1EF9, U+20AB;
+fontdisplay: swap; }
+/* latin-ext */
+@font-face {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/montserrat/v25/JTUSjIg1_i6t8kCHKm459Wdhyzbi.woff2) format('woff2');
+  unicode-range: U+0100-02AF, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+fontdisplay: swap; }
+/* latin */
+@font-face {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/montserrat/v25/JTUSjIg1_i6t8kCHKm459Wlhyw.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+fontdisplay: swap; }
+/* cyrillic-ext */
+@font-face {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/montserrat/v25/JTUSjIg1_i6t8kCHKm459WRhyzbi.woff2) format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+fontdisplay: swap; }
+/* cyrillic */
+@font-face {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/montserrat/v25/JTUSjIg1_i6t8kCHKm459W1hyzbi.woff2) format('woff2');
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+fontdisplay: swap; }
+/* vietnamese */
+@font-face {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/montserrat/v25/JTUSjIg1_i6t8kCHKm459WZhyzbi.woff2) format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+1EA0-1EF9, U+20AB;
+fontdisplay: swap; }
+/* latin-ext */
+@font-face {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/montserrat/v25/JTUSjIg1_i6t8kCHKm459Wdhyzbi.woff2) format('woff2');
+  unicode-range: U+0100-02AF, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+fontdisplay: swap; }
+/* latin */
+@font-face {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/montserrat/v25/JTUSjIg1_i6t8kCHKm459Wlhyw.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+fontdisplay: swap; }
+/* cyrillic-ext */
+@font-face {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/montserrat/v25/JTUSjIg1_i6t8kCHKm459WRhyzbi.woff2) format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+fontdisplay: swap; }
+/* cyrillic */
+@font-face {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/montserrat/v25/JTUSjIg1_i6t8kCHKm459W1hyzbi.woff2) format('woff2');
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+fontdisplay: swap; }
+/* vietnamese */
+@font-face {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/montserrat/v25/JTUSjIg1_i6t8kCHKm459WZhyzbi.woff2) format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+1EA0-1EF9, U+20AB;
+fontdisplay: swap; }
+/* latin-ext */
+@font-face {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/montserrat/v25/JTUSjIg1_i6t8kCHKm459Wdhyzbi.woff2) format('woff2');
+  unicode-range: U+0100-02AF, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+fontdisplay: swap; }
+/* latin */
+@font-face {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/montserrat/v25/JTUSjIg1_i6t8kCHKm459Wlhyw.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+fontdisplay: swap; }
+/* cyrillic-ext */
+@font-face {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/montserrat/v25/JTUSjIg1_i6t8kCHKm459WRhyzbi.woff2) format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+fontdisplay: swap; }
+/* cyrillic */
+@font-face {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/montserrat/v25/JTUSjIg1_i6t8kCHKm459W1hyzbi.woff2) format('woff2');
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+fontdisplay: swap; }
+/* vietnamese */
+@font-face {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/montserrat/v25/JTUSjIg1_i6t8kCHKm459WZhyzbi.woff2) format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+1EA0-1EF9, U+20AB;
+fontdisplay: swap; }
+/* latin-ext */
+@font-face {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/montserrat/v25/JTUSjIg1_i6t8kCHKm459Wdhyzbi.woff2) format('woff2');
+  unicode-range: U+0100-02AF, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+fontdisplay: swap; }
+/* latin */
+@font-face {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/montserrat/v25/JTUSjIg1_i6t8kCHKm459Wlhyw.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+fontdisplay: swap; }
+/* cyrillic-ext */
+@font-face {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 800;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/montserrat/v25/JTUSjIg1_i6t8kCHKm459WRhyzbi.woff2) format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+fontdisplay: swap; }
+/* cyrillic */
+@font-face {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 800;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/montserrat/v25/JTUSjIg1_i6t8kCHKm459W1hyzbi.woff2) format('woff2');
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+fontdisplay: swap; }
+/* vietnamese */
+@font-face {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 800;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/montserrat/v25/JTUSjIg1_i6t8kCHKm459WZhyzbi.woff2) format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+1EA0-1EF9, U+20AB;
+fontdisplay: swap; }
+/* latin-ext */
+@font-face {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 800;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/montserrat/v25/JTUSjIg1_i6t8kCHKm459Wdhyzbi.woff2) format('woff2');
+  unicode-range: U+0100-02AF, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+fontdisplay: swap; }
+/* latin */
+@font-face {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 800;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/montserrat/v25/JTUSjIg1_i6t8kCHKm459Wlhyw.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+fontdisplay: swap; }
+/* cyrillic-ext */
+@font-face {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 900;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/montserrat/v25/JTUSjIg1_i6t8kCHKm459WRhyzbi.woff2) format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+fontdisplay: swap; }
+/* cyrillic */
+@font-face {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 900;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/montserrat/v25/JTUSjIg1_i6t8kCHKm459W1hyzbi.woff2) format('woff2');
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+fontdisplay: swap; }
+/* vietnamese */
+@font-face {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 900;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/montserrat/v25/JTUSjIg1_i6t8kCHKm459WZhyzbi.woff2) format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+1EA0-1EF9, U+20AB;
+fontdisplay: swap; }
+/* latin-ext */
+@font-face {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 900;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/montserrat/v25/JTUSjIg1_i6t8kCHKm459Wdhyzbi.woff2) format('woff2');
+  unicode-range: U+0100-02AF, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+fontdisplay: swap; }
+/* latin */
+@font-face {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 900;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/montserrat/v25/JTUSjIg1_i6t8kCHKm459Wlhyw.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+fontdisplay: swap; }
+</style>
+
+</defs>
+<g transform="matrix(1 0 0 1 300 100)" id="workarea"  >
+<rect style="stroke: none; stroke-width: 0; stroke-dasharray: none; stroke-linecap: butt; stroke-dashoffset: 0; stroke-linejoin: miter; stroke-miterlimit: 4; fill: rgb(59,54,54); fill-rule: nonzero; opacity: 1;"  x="-300" y="-100" rx="0" ry="0" width="600" height="200" />
+</g>
+<g transform="matrix(0.57 0 0 2.02 220.77818148701695 97.99000000000002)" id="7080176b-332b-4024-aa9f-707942664072"  >
+<rect style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-dashoffset: 0; stroke-linejoin: miter; stroke-miterlimit: 4; fill: rgb(245,166,35); fill-rule: nonzero; opacity: 1;"  x="-50" y="-50" rx="0" ry="0" width="100" height="100" />
+</g>
+<g transform="matrix(0.09 0 0 1 1.7881814870169546 95.94)" id="d2685dff-390c-42ee-9ff7-22ab840c2546"  >
+<rect style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-dashoffset: 0; stroke-linejoin: miter; stroke-miterlimit: 4; fill: rgb(245,166,35); fill-rule: nonzero; opacity: 1;"  x="-50" y="-50" rx="0" ry="0" width="100" height="100" />
+</g>
+<g transform="matrix(0.09 0 0 1 601.8081814870169 95.94)" id="c133d62b-831e-4713-aa72-089172582fdf"  >
+<rect style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-dashoffset: 0; stroke-linejoin: miter; stroke-miterlimit: 4; fill: rgb(245,166,35); fill-rule: nonzero; opacity: 1;"  x="-50" y="-50" rx="0" ry="0" width="100" height="100" />
+</g>
+<g transform="matrix(1 0 0 1 85.86818148701687 88.46)" style="" id="27070402-5620-4ee0-91f5-45cb856ccd59"  >
+		<text xml:space="preserve" font-family="Montserrat" font-size="18" font-style="normal" font-weight="800" style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-dashoffset: 0; stroke-linejoin: miter; stroke-miterlimit: 4; fill: rgb(245,166,35); fill-rule: nonzero; opacity: 1; white-space: pre;" ><tspan x="-52.785000000000004" y="5.65452" >Figaro Hair</tspan></text>
+</g>
+<g transform="matrix(1 0 0 1 63.43818148701686 110.49792374917472)" style="" id="891a275f-d332-4ea9-8c44-6a9eddb6a729"  >
+		<text xml:space="preserve" font-family="Montserrat" font-size="9.83002101696879" font-style="normal" font-weight="400" style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-dashoffset: 0; stroke-linejoin: miter; stroke-miterlimit: 4; fill: rgb(255,255,255); fill-rule: nonzero; opacity: 1; white-space: pre;" ><tspan x="-21.601471184788913" y="-2.4659590723167906" style="font-family: 'Montserrat'; font-size: 9.83002101696879px; font-weight: 400; fill: rgb(255,255,255); white-space: pre; "> Salon és</tspan><tspan x="-16.80933593901663" y="8.64196467685794" style="font-family: 'Montserrat'; font-size: 9.83002101696879px; font-weight: 400; fill: rgb(255,255,255); ">Barber</tspan></text>
+</g>
+<g transform="matrix(0.51 0 0 0.51 318.8788314870169 76.61564999999996)" id="129a824c-91cf-4f88-a970-2b1ec945b87a"  >
+<g style=""   >
+		<g transform="matrix(1 0 0 1 0.3716325773660749 -0.5001454913845933)" id="Capa_1"  >
+<path style="stroke: none; stroke-width: 0; stroke-dasharray: none; stroke-linecap: butt; stroke-dashoffset: 0; stroke-linejoin: miter; stroke-miterlimit: 4; fill: rgb(245,166,35); fill-rule: nonzero; opacity: 1;"  transform=" translate(-12.812738992335449, -12.812184012837141)" d="M 22.079 17.835 C 20.531 16.511 18.96 15.709000000000001 17.431 17.031000000000002 L 16.518 17.830000000000002 C 15.850000000000001 18.41 14.608 21.12 9.806000000000001 15.596000000000002 C 5.005 10.079 7.862 9.22 8.531 8.645 L 9.449 7.845 C 10.969999999999999 6.52 10.395999999999999 4.852 9.299 3.135 L 8.636999999999999 2.0949999999999998 C 7.535 0.382 6.335 -0.743 4.81 0.58 L 3.986 1.3 C 3.312 1.791 1.428 3.387 0.971 6.419 C 0.42099999999999993 10.056999999999999 2.156 14.222999999999999 6.131 18.794 C 10.101 23.367 13.988 25.664 17.67 25.624000000000002 C 20.73 25.591 22.578000000000003 23.949 23.156000000000002 23.352000000000004 L 23.983000000000004 22.631000000000004 C 25.504000000000005 21.309000000000005 24.559000000000005 19.963000000000005 23.010000000000005 18.636000000000003 L 22.079 17.835 z" stroke-linecap="round" />
+</g>
+</g>
+</g>
+<g transform="matrix(0.02 0 0 0.02 434.61228148701684 120.37910000000005)" id="28709119-66d0-4dc4-a236-be00b172c5ee"  >
+<g style=""   >
+		<g transform="matrix(1 0 0 1 -0.5 3.1929999999999836)" id="Capa_1"  >
+<path style="stroke: none; stroke-width: 0; stroke-dasharray: none; stroke-linecap: butt; stroke-dashoffset: 0; stroke-linejoin: miter; stroke-miterlimit: 4; fill: rgb(245,166,35); fill-rule: nonzero; opacity: 1;"  transform=" translate(-276.456, -276.456)" d="M 276.462 3.693 L 276.462 3.693 L 276.462 3.693 L 276.462 3.693 L 0 242.311 L 27.551 274.231 L 62.959 243.651 L 62.959 549.2180000000001 L 221.08 549.2180000000001 L 221.08 385.688 L 276.462 385.688 L 276.462 385.688 L 331.844 385.688 L 331.844 549.219 L 489.96299999999997 549.219 L 489.96299999999997 243.657 L 525.366 274.24 L 552.912 242.317 L 276.462 3.693 z M 276.462 261.906 C 242.642 261.906 215.225 234.489 215.225 200.672 C 215.225 166.858 242.647 139.44 276.462 139.44 C 310.278 139.44 337.68899999999996 166.858 337.68899999999996 200.672 C 337.688 234.483 310.278 261.906 276.462 261.906 z" stroke-linecap="round" />
+</g>
+</g>
+</g>
+<g transform="matrix(0.06 0 0 0.06 317.558281487017 119.76510000000002)" id="561290e8-a5c4-400b-9e15-4d548a9c2747"  >
+<g style=""   >
+		<g transform="matrix(1 0 0 1 79.46428568160374 -0.1799999999999784)" id="Capa_1"  >
+<path style="stroke: none; stroke-width: 0; stroke-dasharray: none; stroke-linecap: butt; stroke-dashoffset: 0; stroke-linejoin: miter; stroke-miterlimit: 4; fill: rgb(245,166,35); fill-rule: nonzero; opacity: 1;"  transform=" translate(-195.04928568160375, -115.40500000000002)" d="M 230 49.585 C 230 49.322 230.181 49.066 230.169 48.806 L 159.92900000000003 116.486 L 230.08500000000004 182.00400000000002 C 230.12600000000003 181.53600000000003 230.00000000000003 181.06400000000002 230.00000000000003 180.586 L 230.00000000000003 49.585 z" stroke-linecap="round" />
+</g>
+		<g transform="matrix(1 0 0 1 0.9490000000000123 46.407999999999994)" id="Capa_1"  >
+<path style="stroke: none; stroke-width: 0; stroke-dasharray: none; stroke-linecap: butt; stroke-dashoffset: 0; stroke-linejoin: miter; stroke-miterlimit: 4; fill: rgb(245,166,35); fill-rule: nonzero; opacity: 1;"  transform=" translate(-116.534, -161.993)" d="M 149.207 126.901 L 120.53299999999999 154.489 C 119.082 155.885 117.20799999999998 156.585 115.33299999999998 156.585 C 113.49699999999999 156.585 111.66099999999999 155.91500000000002 110.21999999999998 154.572 L 81.62399999999998 127.92500000000001 L 11.01 195.989 C 12.727 196.606 14.57 197.085 16.5 197.085 L 214.167 197.085 C 217.03300000000002 197.085 219.721 196.21200000000002 222.058 194.91 L 149.207 126.901 z" stroke-linecap="round" />
+</g>
+		<g transform="matrix(1 0 0 1 -1.2964999999999947 -29.664)" id="Capa_1"  >
+<path style="stroke: none; stroke-width: 0; stroke-dasharray: none; stroke-linecap: butt; stroke-dashoffset: 0; stroke-linejoin: miter; stroke-miterlimit: 4; fill: rgb(245,166,35); fill-rule: nonzero; opacity: 1;"  transform=" translate(-114.2885, -85.92099999999999)" d="M 115.251 138.757 L 222.447 35.496 C 220.02 34.053000000000004 217.195 33.085 214.167 33.085 L 16.5 33.085 C 12.557 33.085 8.943999999999999 34.616 6.130000000000001 36.951 L 115.251 138.757 z" stroke-linecap="round" />
+</g>
+		<g transform="matrix(1 0 0 1 -80.3625 2.885000000000005)" id="Capa_1"  >
+<path style="stroke: none; stroke-width: 0; stroke-dasharray: none; stroke-linecap: butt; stroke-dashoffset: 0; stroke-linejoin: miter; stroke-miterlimit: 4; fill: rgb(245,166,35); fill-rule: nonzero; opacity: 1;"  transform=" translate(-35.2225, -118.47)" d="M 0 52.1 L 0 180.584 C 0 182.059 0.339 183.481 0.707 184.84 L 70.445 117.684 L 0 52.1 z" stroke-linecap="round" />
+</g>
+</g>
+</g>
+<g transform="matrix(0.03 0 0 0.03 437.14318148701705 78.36000000000001)" id="6f2687b3-e64b-404a-a7c8-3ee8fa085dd5"  >
+<g style=""   >
+		<g transform="matrix(1 0 0 1 -0.5 -0.5)" id="Capa_1"  >
+<path style="stroke: none; stroke-width: 0; stroke-dasharray: none; stroke-linecap: butt; stroke-dashoffset: 0; stroke-linejoin: miter; stroke-miterlimit: 4; fill: rgb(245,166,35); fill-rule: nonzero; opacity: 1;"  transform=" translate(-256, -255.9995)" d="M 437.019 74.981 C 388.667 26.628 324.38 0 256 0 C 187.62 0 123.332 26.628 74.981 74.98 C 26.628 123.332 0 187.62 0 256 C 0 324.38 26.628 388.66700000000003 74.981 437.019 C 123.332 485.371 187.62 511.999 256 511.999 C 324.381 511.999 388.66700000000003 485.37100000000004 437.02 437.01800000000003 C 485.371 388.66700000000003 512 324.379 512 255.99900000000002 C 512 187.61900000000003 485.371 123.332 437.019 74.981 z M 96.216 96.216 C 118.72699999999999 73.705 145.154 56.535 173.958 45.327999999999996 C 166.286 54.90599999999999 159.107 65.91499999999999 152.528 78.297 C 144.887 92.67699999999999 138.29399999999998 108.47 132.803 125.339 C 113.781 122.182 96.156 118.3 80.41 113.744 C 85.345 107.678 90.61 101.822 96.216 96.216 z M 62.229 139.585 C 80.646 145.482 101.708 150.455 124.69 154.394 C 118.28999999999999 181.56 114.523 210.793 113.624 240.985 L 30.536 240.985 C 32.896 204.752 43.778 170.172 62.229 139.585 z M 60.594 369.638 C 43.139 339.739 32.825 306.157 30.535 271.015 L 113.681 271.015 C 114.663 300.344 118.355 328.746 124.539 355.201 C 101.085 359.003 79.494 363.85 60.594 369.638 z M 96.216 415.784 C 89.836 409.403 83.89399999999999 402.703 78.38499999999999 395.729 C 94.708 391.203 112.95599999999999 387.37 132.599 384.296 C 138.129 401.399 144.79299999999998 417.401 152.527 431.95799999999997 C 159.69699999999997 445.45099999999996 167.57999999999998 457.30699999999996 176.03699999999998 467.46299999999997 C 146.427 456.28 119.268 438.834 96.216 415.784 z M 240.984 478.115 C 218.17600000000002 471.726 196.60000000000002 450.898 179.048 417.866 C 172.909 406.31399999999996 167.517 393.711 162.898 380.279 C 187.628 377.557 213.94299999999998 375.948 240.98399999999998 375.57 L 240.98399999999998 478.115 z M 240.984 345.537 C 210.996 345.94599999999997 181.767 347.82899999999995 154.394 351.044 C 148.356 326.08299999999997 144.723 299.066 143.726 271.01599999999996 L 240.985 271.01599999999996 L 240.985 345.537 z M 240.984 240.984 L 143.669 240.984 C 144.58 212.15 148.27100000000002 184.37900000000002 154.497 158.78300000000002 C 181.69500000000002 162.18300000000002 210.863 164.251 240.984 164.84300000000002 L 240.984 240.984 z M 240.984 134.808 C 213.83800000000002 134.261 187.58100000000002 132.49099999999999 163.026 129.60299999999998 C 167.61700000000002 116.31099999999998 172.967 103.83499999999998 179.048 92.38799999999998 C 196.599 59.35599999999998 218.176 38.52799999999998 240.984 32.138999999999974 L 240.984 134.808 z M 450.717 141.18 C 468.591 171.37300000000002 479.144 205.37900000000002 481.466 240.984 L 398.37800000000004 240.984 C 397.48900000000003 211.14000000000001 393.79400000000004 182.235 387.528 155.337 C 410.661 151.601 431.984 146.848 450.717 141.18 z M 415.783 96.216 C 421.812 102.24499999999999 427.444 108.565 432.697 115.12599999999999 C 416.624 119.51499999999999 398.725 123.24 379.493 126.23799999999999 C 373.945 109.02999999999999 367.25 92.93299999999999 359.473 78.29699999999998 C 352.894 65.91499999999998 345.71500000000003 54.905999999999985 338.043 45.32799999999998 C 366.845 56.535 393.273 73.705 415.783 96.216 z M 271.016 271.016 L 368.27500000000003 271.016 C 367.271 299.284 363.58900000000006 326.50600000000003 357.46500000000003 351.62800000000004 C 330.271 348.24700000000007 301.11600000000004 346.19800000000004 271.016 345.62200000000007 L 271.016 271.016 z M 271.016 240.984 L 271.016 164.943 C 301.021 164.549 330.273 162.68200000000002 357.672 159.479 C 363.797 184.882 367.428 212.411 368.331 240.984 L 271.016 240.984 z M 271.014 32.139 L 271.015 32.139 C 293.823 38.528000000000006 315.399 59.356 332.95099999999996 92.388 C 339.12899999999996 104.015 344.55199999999996 116.706 349.191 130.236 C 324.428 132.94799999999998 298.08299999999997 134.545 271.01399999999995 134.91 L 271.01399999999995 32.139 z M 271.016 478.115 L 271.016 375.657 C 298.136 376.18899999999996 324.37300000000005 377.943 348.91900000000004 380.813 C 344.34000000000003 394.04499999999996 339.00800000000004 406.467 332.95200000000006 417.866 C 315.4 450.898 293.824 471.726 271.016 478.115 z M 415.783 415.784 C 392.732 438.835 365.57300000000004 456.28 335.962 467.462 C 344.419 457.306 352.30199999999996 445.45099999999996 359.472 431.95799999999997 C 367.092 417.61699999999996 373.66999999999996 401.86999999999995 379.152 385.05199999999996 C 398.61699999999996 388.265 416.625 392.23799999999994 432.667 396.91099999999994 C 427.424 403.457 421.801 409.765 415.783 415.784 z M 450.606 371.009 C 431.971 365.01800000000003 410.606 359.97700000000003 387.28 355.999 C 393.57599999999996 329.319 397.328 300.639 398.32099999999997 271.016 L 481.467 271.016 C 479.139 306.694 468.549 340.769 450.606 371.009 z" stroke-linecap="round" />
+</g>
+</g>
+</g>
+<g transform="matrix(1 0 0 1 362.7581814870169 77.23999999999994)" style="" id="218bc6ae-d6dc-46f9-863a-729d0e7d1718"  >
+		<text xml:space="preserve" font-family="Montserrat" font-size="8" font-style="normal" font-weight="400" style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-dashoffset: 0; stroke-linejoin: miter; stroke-miterlimit: 4; fill: rgb(255,255,255); fill-rule: nonzero; opacity: 1; white-space: pre;" ><tspan x="-24.630000000000003" y="2.51312" style="font-family: 'Montserrat'; font-size: 8px; font-weight: 400; fill: rgb(255,255,255); ">06305166371</tspan></text>
+</g>
+<g transform="matrix(1 0 0 1 400.07263798392836 125.40822)" style="" id="7c7ce5c2-aa9b-43a8-9a0f-eb88389b27d5"  >
+		<text xml:space="preserve" font-family="Montserrat" font-size="7.43504619563682" font-style="normal" font-weight="400" style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-dashoffset: 0; stroke-linejoin: miter; stroke-miterlimit: 4; fill: rgb(255,255,255); fill-rule: nonzero; opacity: 1; white-space: pre;" ><tspan x="-64.64945649691158" y="-1.8651556886374525" style="font-family: 'Montserrat'; font-size: 7.43504619563682px; font-weight: 400; fill: rgb(255,255,255); ">figarohairsalonszeged</tspan><tspan x="-64.64945649691158" y="6.536446512432153" style="font-family: 'Montserrat'; font-size: 7.43504619563682px; font-weight: 400; fill: rgb(255,255,255); ">@gmail.com</tspan></text>
+</g>
+<g transform="matrix(1 0 0 1 501.6631814870169 126.0416022010696)" style="" id="e783d455-a631-417a-8ea3-6a7be6c44e41"  >
+		<text xml:space="preserve" font-family="Montserrat" font-size="7.43504619563682" font-style="normal" font-weight="400" style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-dashoffset: 0; stroke-linejoin: miter; stroke-miterlimit: 4; fill: rgb(255,255,255); fill-rule: nonzero; opacity: 1; white-space: pre;" ><tspan x="-50.307381321227645" y="-1.8651556886374525" style="font-family: 'Montserrat'; font-size: 7.43504619563682px; font-weight: 400; fill: rgb(255,255,255); ">Szeged 6720 Somogyi utca</tspan><tspan x="-4.43314629414845" y="6.536446512432153" style="font-family: 'Montserrat'; font-size: 7.43504619563682px; font-weight: 400; fill: rgb(255,255,255); ">16.</tspan></text>
+</g>
+<g transform="matrix(1 0 0 1 491.8981814870172 76.92080110053477)" style="" id="8cc3c47c-a78e-47e6-8bdd-e9c49cd878dd"  >
+		<text xml:space="preserve" font-family="Montserrat" font-size="7.43504619563682" font-style="normal" font-weight="400" style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-dashoffset: 0; stroke-linejoin: miter; stroke-miterlimit: 4; fill: rgb(255,255,255); fill-rule: nonzero; opacity: 1; white-space: pre;" ><tspan x="-40.25148134162884" y="2.3356454118973504" >www.figaroszeged.hu</tspan></text>
+</g>
+<g transform="matrix(0.34782929086138226 0 0 0.34782929086138226 220.41936067120332 97.99000000000001)" id="cd6ab05c-22bf-4eed-a9d3-f567ae5b8519"  >
+	<image style="stroke: none; stroke-width: 0; stroke-dasharray: none; stroke-linecap: butt; stroke-dashoffset: 0; stroke-linejoin: miter; stroke-miterlimit: 4; fill: rgb(0,0,0); fill-rule: nonzero; opacity: 1;" vector-effect="non-scaling-stroke"  xlink:href="https://d8r14y803bnlk.cloudfront.net/usetldr/2596574/u/2660445/st/e1c8eec0384b46deb34261e870636f09/p/a992fd612fe145e4afea9d6a0939d1cf/a631720e-faf7-4552-8738-828620321abd_cd6ab05c22bf4eeda9d3f567ae5b8519.png" x="-126" y="-141.5" width="252" height="283"></image>
+</g>
+</svg>

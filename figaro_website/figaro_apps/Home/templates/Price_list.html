@@ -9,12 +9,21 @@
                 {% include 'Price_list_women.html' %}
             {% endblock women %}
         </div>
+    {% elif actual_page == "price_list_examination" %}
+        <div>
+            {% block examination %}
+                {% include 'Price_list_examination.html' %}
+            {% endblock examination %}
+        </div>
     {% else %}
         <div>
             {% include 'Price_list_man.html' %}
         </div>
         <div>
             {% include 'Price_list_women.html' %}
+        </div>
+        <div>
+            {% include 'Price_list_examination.html' %}
         </div>
     {% endif %}
 {% endblock content %}  

@@ -3,87 +3,95 @@
 <link rel="stylesheet" href="../static/style/home.css">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
 <script src="../static/js/video.js"></script>
-<div>
-  <div class="container-fluid " style="margin-top: 20px; padding-left: 10%; padding-right: 10%;">
-    <div class="row d-flex align-items-center information_and_video_container" style="background-color: #17191b; border-radius: 10px;">
-      <div class="col-lg-6 main_info_container" id="_main_info_container" style="height: 17rem;" >
-        <div class="main_info_box animated-box in">
-          <div class="main_info_tittle">
-            <h3>Figaro Hair Salon és Barber</h3>
-          </div>
-          <div class="main_info_text">
-            <p>Szeged szívében a Somogyi utca 16. szám alatt található Figaro Hair Salonban várunk sok szeretettel.
-              Gyönyörű hajra esetleg vagány szakállra vágysz? Nézz be hozzánk és mi valóra váltjuk elképzeléseidet.
-            </p>
-            <div class="row"> 
-              <div class="opening col-lg-6 mb-4">
-                <h3>Nyitvatartás:</h3>
-                <div>
-                  <p>Hétfő-Péntek: 8-20</p>
-                  <p> Szombaton: 8-12</p>
-                  <p> Vasárnap: Zárva</p>
-                </div>
+<link rel="stylesheet" href="../static/style/test.css">
+<script src="../static/js/test.js"></script>
+<section class="bg_selection">
+  <div class="container-fluid  align-items-center" style="padding-left: 10%; padding-right: 10%;">
+    <div class="row d-flex align-items-center " style="border-radius: 10px; height: 100vh;">
+      <div class="col-lg-12">
+        <div class="row align-items-center information_and_video_container">
+          <div class="col-lg-6 main_info_container" id="_main_info_container" style="height: 17rem;" >
+            <div class="main_info_box animated-box in">
+              <div class="main_info_tittle">
+                <h3>Figaro Hair Salon és Barber</h3>
               </div>
-              <div class="inf_box col-lg-6 mb-4 ">
-                <h3>Névjegyek:</h3>
-                <div class="info_box">
-                    <div class="icon">
-                        <img 
-                            src="../static/image/icons/phone.png"
-                            class="w-5 shadow-1-strong rounded mb-4"
-                            alt="Boat on Calm Water"
-                        />
+              <div class="main_info_text">
+                <p>Szeged szívében a Somogyi utca 16. szám alatt található Figaro Hair Salonban várunk sok szeretettel.
+                  Gyönyörű hajra esetleg vagány szakállra vágysz? Nézz be hozzánk és mi valóra váltjuk elképzeléseidet.
+                </p>
+                <div class="row"> 
+                  <div class="opening col-lg-6 mb-4">
+                    <h3>Nyitvatartás:</h3>
+                    <div>
+                      <p>Hétfő-Péntek: 8-20</p>
+                      <p> Szombaton: 8-12</p>
+                      <p> Vasárnap: Zárva</p>
                     </div>
-                    <a class="info_text" style="color: white" href="tel:06305166371">
-                      06 30 516 6371
-                    </a>
-                </div>
-                <div class="info_box">
-                  <div class="icon">
-                      <img 
-                          src="../static/image/icons/phone.png"
-                          class="w-5 shadow-1-strong rounded mb-4"
-                          alt="Boat on Calm Water"
-                      />
                   </div>
-                  <a class="info_text" style="color: white" href="tel:06202336300">
-                    06 20 233 6300
-                  </a>
-                </div>
-                <div class="info_box">
-                    <div class="icon">
-                        <img
-                            src="../static/image/icons/localtion.png"
-                            class="w-5 shadow-1-strong rounded mb-4"
-                            alt="Boat on Calm Water"
-                        />
+                  <div class="inf_box col-lg-6 mb-4 ">
+                    <h3>Névjegyek:</h3>
+                    <div class="info_box">
+                        <div class="icon">
+                            <img 
+                                src="../static/image/icons/phone.png"
+                                class="w-5 shadow-1-strong rounded mb-4"
+                                alt="Boat on Calm Water"
+                            />
+                        </div>
+                        <a class="info_text" style="color: white" href="tel:06305166371">
+                          06 30 516 6371
+                        </a>
                     </div>
-                    <p class="info_text">
-                        Szeged Somogyi utca 16.
-                    </p>
+                    <div class="info_box">
+                      <div class="icon">
+                          <img 
+                              src="../static/image/icons/phone.png"
+                              class="w-5 shadow-1-strong rounded mb-4"
+                              alt="Boat on Calm Water"
+                          />
+                      </div>
+                      <a class="info_text" style="color: white" href="tel:06202336300">
+                        06 20 233 6300
+                      </a>
+                    </div>
+                    <div class="info_box">
+                        <div class="icon">
+                            <img
+                                src="../static/image/icons/localtion.png"
+                                class="w-5 shadow-1-strong rounded mb-4"
+                                alt="Boat on Calm Water"
+                            />
+                        </div>
+                        <p class="info_text">
+                            Szeged Somogyi utca 16.
+                        </p>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
+          <div class="col-lg-6 mb-6 mb-lg-6 video_container" style="padding: 15px;">
+            {% block video %}
+                {% include 'Video.html' %}
+            {% endblock video %}
+          </div>
         </div>
+       
       </div>
-      <div class="col-lg-6 mb-6 mb-lg-6 video_container" style="padding: 15px;">
-        {% block video %}
-            {% include 'Video.html' %}
-        {% endblock video %}
-      </div>
+     
     </div>
   </div>
-</div>
-<hr class="featurette-divider">
-<div class="d-md-flex flex-md-equal w-100 my-md-3 ps-md-3">
-  <div class="container-fluid" style="margin-top: 20px; padding-left: 10%; padding-right: 10%;">
-    <h2 class="mb-4" style="text-align: center;">Fodrászaink</h2>
-    <div class="row" style="text-align: center;">
+</section>
+<section >
+  
+  <div class="container-fluid reveal fade-bottom" style="padding-left: 10%; padding-right: 10%;">
+    <h2 class="mb-4 text-white" style="text-align: center;">Fodrászaink</h2>
+    <div class="row justify-content-around align-items-center" style="height: 100vh;">
       
       {% for hairdresser in hairdressers %}
-        <div class="col-lg-6 col-md-12 mb-4 mb-lg-0 ">
-          <div class="card hair_stylist w-90" style="border-radius: 15px;">
+        <div class="col-lg-6 col-md-12 mb-4 mb-lg-0">
+          <div class="card hair_stylist w-90" style="border-radius: 15px; margin: auto;">
             <div class="card-body text-center">
               <div class="mt-3 mb-4">
                 <img
@@ -97,8 +105,8 @@
               <a class="text-muted" style="color: white" href="tel:{{hairdresser.phone}}">
                 {{hairdresser.phone}}
               </a><br>
-              <button class="btn btn-light" data-toggle="collapse" data-target="#info"style="width: 40%; margin-bottom: 5px; background-color: #ced2d6;">További információ</button><br>
-              <div id="info" class="collapse">
+              <button class="btn btn-light" data-toggle="collapse" data-target="#info_{{hairdresser.id}}"style="width: 40%; margin-bottom: 5px; background-color: #ced2d6;">További információ</button><br>
+              <div id="info_{{hairdresser.id}}" class="collapse">
                 <p style="text-align: left ;">{{hairdresser.description}}</p>
                 <div class="d-grid gap-2 col-12 mx-auto">
                 </ul><a href="{% url 'Gallery' %}"class="btn btn-primary md1  " role="button" style="width: 60%; margin-bottom: 5px; background-color: #212121">Galéria</a>
@@ -110,90 +118,90 @@
         </div>
       {% endfor %}
   </div>
-</div>
-</div>
-<hr class="featurette-divider">
-<div class="container-fluid" style="margin-top: 20px; padding-left: 10%; padding-right: 10%;">
-    <h2 class="mb-4" style="text-align: center;">Aktuális áraink</h2>
-      <div class="row justify-content-around" style="height:40rem">
+  
+</section>
+<section class="bg_selection">
+  <div class="container-fluid" style="padding-left: 10%; padding-right: 10%;">
+        <h2 class="mb-4 text-white" style="text-align: center;">Aktuális áraink</h2>
+        <div class="row justify-content-around" style="height: 100vh;">
+        <!-- Swiper -->
+        <div class="swiper swiper1">
+          <div class="swiper-wrapper">
+            {% for price_data in price_datas %}
+              {% if price_data.categori == 0 %}
+                <div class="swiper-slide col-lg-4 col-md-12 mb-4 mb-lg-0">
+                  <div class="pricing-table-3 premium" style="width: 90%;" >
+                    <div class="pricing-table-header">     
+                        <h4><strong>{{price_data.tittle}}</strong></h4>
+                    </div>
+                    <div class="price"><strong>{{price_data.price}} Ft</strong></div>
+                    <div class="pricing-body">
+                        <ul class="pricing-table-ul">
+                            <p>{{price_data.barber_name}}</p>
+                            <li></i> Mosás</li>
+                            <li></i> Hajvágás</li>
+                            <li></i> Szárítás</li>
+                        </ul><a href="{% url 'Booking' %}?hairdresser_id=2&categori_id={{price_data.id}}" class="view-more">Időpontfoglalás</a></div>
+                    </div>
+                </div>
+              {% else %}
+                <div class="swiper-slide col-lg-4 col-md-12 mb-4 mb-lg-0">
+                  <div class="pricing-table-3 basic" style="width: 90%;" >
+                    <div class="pricing-table-header">     
+                        <h4><strong>{{price_data.tittle}}</strong></h4>
+                    </div>
+                    <div class="price women_price"><strong>{{price_data.price}} Ft</strong></div>
+                    <div class="pricing-body">
+                        <ul class="pricing-table-ul">
+                            <p>{{price_data.barber_name}}</p>
+                            <li></i> Mosás</li>
+                            <li></i> Hajvágás</li>
+                            <li></i> Szárítás</li>
+                        </ul><a href="{% url 'Booking' %}?hairdresser_id=1&categori_id={{price_data.id}}" class="view-more">Időpontfoglalás</a></div>
+                    </div>
+                </div>
+              {% endif %}
+            {% endfor %}
+          </div> 
+          <div class="swiper-button-next"></div>
+          <div class="swiper-button-prev"></div>
+        </div>
+      </div>
+  </div>  
+</section>   
+
+<section>
+  <div class="container-fluid" style="padding-left: 10%; padding-right: 10%;">
+    <h2 class="mb-4 text-white" style="text-align: center;">Munkáink</h2>
+    <div class="row justify-content-around" style="height:100vh">
       <!-- Swiper -->
-      <div class="swiper">
+      <div class="swiper swiper2">
         <div class="swiper-wrapper">
-          {% for price_data in price_datas %}
-            {% if price_data.categori == 0 %}
-              <div class="swiper-slide col-lg-4 col-md-12 mb-4 mb-lg-0">
-                <div class="pricing-table-3 premium" style="width: 90%;" >
-                  <div class="pricing-table-header">     
-                      <h4><strong>{{price_data.tittle}}</strong></h4>
-                  </div>
-                  <div class="price"><strong>{{price_data.price}} Ft</strong></div>
-                  <div class="pricing-body">
-                      <ul class="pricing-table-ul">
-                          <p>{{price_data.barber_name}}</p>
-                          <li></i> Mosás</li>
-                          <li></i> Hajvágás</li>
-                          <li></i> Szárítás</li>
-                      </ul><a href="{% url 'Booking' %}" class="view-more">Időpontfoglalás</a></div>
-                  </div>
-              </div>
-            {% else %}
-              <div class="swiper-slide col-lg-4 col-md-12 mb-4 mb-lg-0">
-                <div class="pricing-table-3 basic" style="width: 90%;" >
-                  <div class="pricing-table-header">     
-                      <h4><strong>{{price_data.tittle}}</strong></h4>
-                  </div>
-                  <div class="price women_price"><strong>{{price_data.price}} Ft</strong></div>
-                  <div class="pricing-body">
-                      <ul class="pricing-table-ul">
-                          <p>{{price_data.barber_name}}</p>
-                          <li></i> Mosás</li>
-                          <li></i> Hajvágás</li>
-                          <li></i> Szárítás</li>
-                      </ul><a href="{% url 'Booking' %}" class="view-more">Időpontfoglalás</a></div>
-                  </div>
-              </div>
-            {% endif %}
+          {% for i in  range %}
+            <div class="swiper-slide col-lg-3 col-md-12 mb-4 image_box">
+              <img
+                  src="../static/image/gallery/top/{{i}}.jpg"
+                  class="w-100 shadow-1-strong rounded mb-4"
+                  alt="Boat on Calm Water"
+                  />
+            </div>
           {% endfor %}
-        </div> 
+        </div>
         <div class="swiper-button-next"></div>
         <div class="swiper-button-prev"></div>
-      </div>
-    </div>
-</div>  
-  
-    
-      </div>
-  </div>
-
+      </div> 
+    </div> 
+  </div> 
+</section> 
 <hr class="featurette-divider">
-<div class="container-fluid" style="margin-top: 20px; padding-left: 10%; padding-right: 10%;">
-<h2 class="mb-4" style="text-align: center;">Munkáink</h2>
-<div class="row justify-content-around" style="height:30rem">
-    <!-- Swiper -->
-    <div class="swiper">
-      <div class="swiper-wrapper">
-        {% for i in  range %}
-          <div class="swiper-slide col-lg-3 col-md-12 mb-4 image_box">
-            <img
-                src="../static/image/gallery/top/{{i}}.jpg"
-                class="w-100 shadow-1-strong rounded mb-4"
-                alt="Boat on Calm Water"
-                />
-          </div>
-        {% endfor %}
-      </div>
-      <div class="swiper-button-next"></div>
-      <div class="swiper-button-prev"></div>
-    </div>  
 <!-- Swiper JS -->
 <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
   
 <!-- Initialize Swiper -->
 <script>
   var _slidesPerView = window.innerWidth <= 760 ? '1' : '2';
-  console.log(window.innerWidth)
   if(_slidesPerView == '2'){
-    var swiper = new Swiper('.swiper', {
+    var swiper = new Swiper('.swiper1', {
     slidesPerView: 3,
     direction: getDirection(),
     loop:true,
@@ -213,7 +221,7 @@
   });
   }
   else{
-    var swiper = new Swiper('.swiper', {
+    var swiper = new Swiper('.swiper1', {
     slidesPerView: 1,
     direction: getDirection(),
     autoplay: {
@@ -241,12 +249,58 @@
     return direction;
   }
 </script>
- 
-    </div>
-    </div>
-    </div>
-</div>
-<hr class="featurette-divider">
+<script>
+  var _slidesPerView = window.innerWidth <= 760 ? '1' : '2';
+  if(_slidesPerView == '2'){
+    var swiper = new Swiper('.swiper2', {
+    slidesPerView: 4,
+    direction: getDirection(),
+    loop:true,
+    autoplay: {
+      delay: 6000,
+      disableOnInteraction: false,
+    },
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+    },
+    on: {
+      resize: function () {
+        swiper.changeDirection(getDirection());
+      },
+    },
+  });
+  }
+  else{
+    var swiper = new Swiper('.swiper2', {
+    slidesPerView: 1,
+    direction: getDirection(),
+    autoplay: {
+      delay: 3000,
+      disableOnInteraction: false,
+    },
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+    },
+    on: {
+      resize: function () {
+        swiper.changeDirection(getDirection());
+      },
+    },
+  });
+  }
+  
+  
+
+  function getDirection() {
+    var windowWidth = window.innerWidth;
+    var direction = window.innerWidth <= 760 ? 'horizontal' : 'horizontal';
+
+    return direction;
+  }
+</script>
+
 <div class="container" style="margin-top: 20px;">
     <div class="row">
       <div class="col-lg-12 mb-12 mb-lg-12" style="padding: 15px;">

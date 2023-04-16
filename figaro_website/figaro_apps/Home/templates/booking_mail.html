@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Időpont foglalás megerősítése</title>
+  </head>
+  <body>
+    <p>Kedves {{ name }},</p>
+    <p>Szeretném megerősíteni az általad foglalt időpontot az alábbi adatok szerint:</p>
+    <ul>
+      <li>Időpont: {{date}} {{time}}</li>
+      <li>Helyszín: Szeged Somogyi utca 16.</li>
+    </ul>
+    <p>Kérlek, győződj meg róla, hogy az időpont és a helyszín megfelelően vannak-e feltüntetve. Ha bármilyen változást szeretnél az időpontban, kérlek vedd fel velünk a kapcsolatot az alábbi elérhetőségek egyikén.</p>
+    <p>Az alábbiakban megtalálod az általad foglalt szolgáltatás árát.</p>
+    <ul>
+      <li>Szolgáltatás: {{categori.tittle}}</li>
+      <li>Ár: {{categori.price}}Ft</li>
+    </ul>
+    <p>Ha bármilyen kérdésed van, ne habozz kapcsolatba lépni velünk. Nagyon várjuk, hogy találkozzunk veled az időpontodban.</p>
+    <p>Üdvözlettel</p>
+    <img src="../../../static/image/email/1.svg" alt="Italian Trulli">
+  </body>
+</html>
